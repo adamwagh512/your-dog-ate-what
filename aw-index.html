@@ -1,0 +1,106 @@
+<!-- Boiler plate  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links the fonts from google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Dosis:wght@200&family=Lato&display=swap" rel="stylesheet">
+    <!-- Links Bulma stylesheet -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <!-- Links my style sheet -->
+    <link rel="stylesheet" href="./assets/css/aw-indexstyling.css">
+    <!-- Title for tab in browser -->
+    <title>Your Dog Ate What ?!? </title>
+</head>
+<body>
+    <!-- Columns is how Bulma organizes stuff -->
+    <div class="columns">
+    <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
+        <div id="menu" class="column">
+        <article class="panel">
+                <p class="panel-heading">
+                     <img id="logo" src="./assets/images/logo2.png" alt="">
+                </p>
+                  
+            <div class="panel-block">
+                <p class="control has-icons-left">
+                    <span class="icon is-left">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </span>
+                </p>
+            </div>
+            
+            <a class="panel-block">
+                <span class="panel-icon">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                </span>
+                About Us
+            </a>
+
+            <a class="panel-block">
+                <span class="panel-icon">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                </span>
+                Poison Index
+            </a>
+                
+            <a class="panel-block">
+                <span class="panel-icon">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                </span>
+                Documentation
+            </a>
+
+
+            <a class="panel-block">
+                <span class="panel-icon">
+                <i class="fas fa-book" aria-hidden="true"></i>
+                </span>
+                FAQs
+            </a>
+        </article>
+        </div>
+            
+        <div class="column">
+            <h1 class="title is-1"> Your dog ate what?!?</h1>
+            <div class="hero">
+                <div class="container">
+                    <img id="dog" src="./assets/images/dr-dog.jpg" alt="dog eating cake">
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <!-- Giving input the ID of eaten -->
+                    <textarea id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
+                </div>
+            </div>
+            <!--Submit button  -->
+            <button id="submitBtn" class="button is-large is-fullwidth">Submit</button>
+        </div>
+        
+        <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
+       <div id="past-searches" class="column">
+            <br>
+            <br>
+            <!-- Id tags used to hide buttons when not in use, class used for formating with bulma -->
+            <button id="rs1" class="button is-large is-fullwidth">past search 1</button>
+            <br>
+            <button id="rs2" class="button is-large is-fullwidth">past search 2</button>
+            <br>
+            <button id="rs3" class="button is-large is-fullwidth">past search 3</button>
+            <br>
+            <button id="rs4" class="button is-large is-fullwidth">past search 4</button>
+        </div>
+    </div>
+
+<!-- Jquery Script tag -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Script tag for my JS -->
+<script src="./assets/js/aw-indexscript.js"></script>
+</body>
+</html>
