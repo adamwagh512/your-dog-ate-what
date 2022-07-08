@@ -1,4 +1,4 @@
-[
+export const knownToxins = [
 {"name":"ACE-inhibitors","link":"https://www.petpoisonhelpline.com/poison/ace-inhibitors/","category":"Medications"},
 {"name":"Acetaminophen","link":"https://www.petpoisonhelpline.com/poison/acetaminophen/","category":"medications"},
 {"name":"Acids","link":"https://www.petpoisonhelpline.com/poison/acids/","category":"household items"},
