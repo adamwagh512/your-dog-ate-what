@@ -41,7 +41,7 @@ h1 {
     background-color: var(--a3);
 }
 
-#rs1 {
+/* #rs1 {
     display: none;
 } 
 
@@ -54,13 +54,16 @@ h1 {
 }
 
 #rs4 {
-    display: none;
-}
+    display: none; 
+} */
+
 
 #logo {
-    width: 35vw;
-    
-   
+    width: 35vw;   
+}
+
+.about-us {
+    text-align: center;
 }
 /* font-family: 'Coming Soon', cursive;
 font-family: 'Dosis', sans-serif;
