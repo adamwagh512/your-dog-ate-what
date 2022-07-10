@@ -1,9 +1,12 @@
 function initMap() {
     
     var options = {
-        center: {lat: 30.2672 lng:-97.7431 };
+        center: {lat: 30.2672 , lng: -97.7431 },
         zoom: 8
     }
+
+    // Var: to store results of places search
+    //  Google Maps - 30 Miles radius 
 
     map = new google.maps.Map(document.getElementById("map"), options)
 }
