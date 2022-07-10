@@ -7,7 +7,6 @@ $.ajax({
     url: 'http://api.ipstack.com/' + ip + '?access_key=' + access_key,
     dataType: 'jsonp',
     success: function(json) {
-
         // output the "capital" object inside "location"
         alert(json.location.capital);
 
