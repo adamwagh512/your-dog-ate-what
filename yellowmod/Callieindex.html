@@ -22,14 +22,28 @@
                   </figure>
         </div>
       </div>
+      <!-- Nearest  Animal  Hospital will display here -->
       <div class="box has-text-centered">
         Vet option #1
+      <!-- Option #2 (2nd nearest)  -->
       </div>
       <div class="box has-text-centered ">
         Vet option #2
       </div>
+      <!-- Either 3rd nearest or potentially the nearest "24 hour animal hospital" -->
+      <div class="box has-text-centered ">
+        Vet option #3
+      </div>
+
+      
       <div class="box has-text-centered">
-        Google Maps API
+       <!-- Inserting the map right here. -->
+       <div id="map"></div>
+
+       <script async
+       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQunb8lbtqlUOSfJZlsdbxB6JFqAiSht8&callback=initMap">
+   </script>
+   <script src="/yellowmod/assets/script.js"></script>
       </div>
     <script src="script.js"></script>
     </body>
