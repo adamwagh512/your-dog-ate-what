@@ -13,8 +13,7 @@ var userInput = "bread";
             success: function(data) {
                 
                 var ourData = " ";
-                var ourName =" ";
-               // var ourIngredients = " ";
+                var ourName = " ";
                     
                 for (i=0; i< 10; i++){
                     ourName = ourData[i].name;
