@@ -33,34 +33,22 @@ h1 {
     max-width: 50vw
 }
 
-#past-searches {
-    background-color: var(--a2);
-}
 
 .button {
     background-color: var(--a3);
 }
 
-#rs1 {
-    display: none;
+.rs {
+    margin-top: 30px;
+    background-color: var(--a2);
 } 
 
-#rs2{
-    display: none;
-}
-
-#rs3 {
-    display:none
-}
-
-#rs4 {
-    display: none;
-}
-
 #logo {
-    width: 35vw;
-    
-   
+    width: 30px;   
+}
+
+.about-us {
+    text-align: center;
 }
 /* font-family: 'Coming Soon', cursive;
 font-family: 'Dosis', sans-serif;
