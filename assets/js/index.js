@@ -78,6 +78,7 @@ function showMaybeHazardHandler(event) {
 
 debugInit()
 indexPageInit()
+<<<<<<< HEAD
 
 // Sets buttons display to a default of hide
 $("#buttonsContainer").children().hide();
@@ -97,3 +98,5 @@ $("#submitBtn").on("click", function () {
 });
 //loads recent searches from local storage when page is loaded
 loadRecentSearches();
+=======
+>>>>>>> 1830b43 (foodAPI)

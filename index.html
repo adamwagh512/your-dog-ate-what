@@ -34,12 +34,6 @@
                         </span>
                     </p>
                 </div>
-                
-                <a class="panel-block">
-                    <span class="panel-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                    </span>
-                </a>
             
                 <a class="panel-block" href="#aboutUs">
                     <span class="panel-icon">
@@ -56,7 +50,6 @@
                 </a>
                     
                 <a class="panel-block" href="https://github.com/adamwagh512/your-dog-ate-what" target="_blank">
-                    
                     <span class="panel-icon">
                         <i class="fas fa-book" aria-hidden="true"></i>
                     </span>
@@ -69,6 +62,13 @@
                     <i class="fas fa-book" aria-hidden="true"></i>
                     </span>
                     Contact Us
+                </a>    
+
+                <a class="panel-block">
+                    <span class="panel-icon">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    FAQs
                 </a>
             </article>
         </div>
@@ -282,6 +282,78 @@
               </div>
         </div>
         <div class="column"></div>
+    </div>
+    <button id="no-hazard-button" data-target="#no-hazard-modal">Show No Hazard</button>
+    <button id="maybe-hazard-button" data-target="#maybe-hazard-modal">Show Maybe Hazard</button>
+
+    <div id = "no-hazard-modal" class = "modal">
+        <div class = "modal-background">
+        </div>
+        <div class = "modal-content">
+            <div class="bulma-overlay-mixin-parent">
+                <div class="notification is-success">
+                    <div class="is-size-2 has-text-centered">
+                        <div class="">
+                        Phew! Your search is not toxic to dogs!
+                        </div>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column is-half">
+                        <figure class="image is-256x128">
+                            <img class="is-rounded" src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
+                        </figure>
+                    </div>
+                </div>
+                <div class="message-body">
+                    <article class="message is-primary">
+                        <div class="is-size-4">
+                            The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions or concerns.
+                            <!-- <br><br><br><br><br><br> -->
+                            <div class="is-size-2 has-text-centered">
+                                Toxicity Level
+                                <progress class="progress is-primary" value="1" max="100">100%</progress>
+                            </div>
+                            <div class="has-text-left is-size-4">  
+                                low
+                                <!-- <br><br><br><br><br><br> -->
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <button class="my-modal-close">CLOSE ME</button>
+        </div>
+    </div>
+
+    <div id = "maybe-hazard-modal" class = "modal">
+        <div class = "modal-background"></div>
+        <div class = "modal-content">
+            <div class="content is-larger">
+                <div class="has-text-centered has-background-warning">
+                  <h1 class="has-text-black">
+                    Caution! Your search is potentially toxic to dogs.
+                  </h1>
+                </div>
+                <h2 class="has-text-centered has-text-weight-semibold">
+                  The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions and concerns.
+                </h2>
+                <figure class="image">
+                  <img class="is-rounded" src="https://media.istockphoto.com/photos/funny-dog-linking-its-lips-with-tongue-out-isolated-on-yellow-picture-id1251347397?k=20&m=1251347397&s=612x612&w=0&h=CJYfQaqfJw10Iqor20yFc7z1YjuPeWZi4E-DPJIvBmw=">
+                </figure>
+            </div>
+                  
+            <div class="box has-text-centered">
+            Vet option #1
+            </div>
+            <div class="box has-text-centered ">
+            Vet option #2
+            </div>
+            <div class="box has-text-centered">
+            Google Maps API
+            </div>
+            <button class="my-modal-close">CLOSE ME</button>
+        </div>
     </div>
     <button id="no-hazard-button" data-target="#no-hazard-modal">Show No Hazard</button>
     <button id="maybe-hazard-button" data-target="#maybe-hazard-modal">Show Maybe Hazard</button>
