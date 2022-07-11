@@ -130,3 +130,5 @@ $("#submitBtn").on("click", function () {
 });
 //loads recent searches from local storage when page is loaded
 loadRecentSearches();
+
+// document.getElementById("marian1").style.display = "none";
