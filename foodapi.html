@@ -1,65 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-    <link rel="stylesheet" src="assets/css/foodapi.css"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" src="assets/css/foodapi.css"/>
+    
 </head>
 <header>
-    <div class="columns">
-        <div class="column">
-            <nav class="navbar" role="navigation" aria-label="main navigation">
-                <div class="navbar-brand">
-            <img src= "" alt="Your Dog Ate What?" width="200" height="10">
-            </img>
-            </div></div>
-            <div class="columns">
-                <div class="column mt-3 mr-3">
-            <nav class="breadcrumb" aria-label="breadcrumbs" >
-                <div class="is-justify-content-left">
-                    <div class="is-justify-content-bottom">
-                <ul>
-                    <li class="is-active"><a href="#" aria-current="page">Your Dog Ate What?</a></li>
-                  <li class="is-active"><a href="#" aria-current="page"> Food Index</a></li>
-                </ul>
-            </nav></nav></div></div></div>
-        </div>
-    
+  <div class="columns">
+    <div class="column">
+      <img src= "./assets/images/4f26ee52435547e29dea89d99b107fe5 (1).png" alt="Your Dog Ate What?" width="200" height="10"></img>
     </div>
+    <div class="columns">
+      <div class="column mt-3 mr-3">
+        <nav class="breadcrumb is-justify-content-left" aria-label="breadcrumbs" >
+          <ul>
+            <li class="is-active"><a href="#" aria-current="page">Your Dog Ate What?</a></li>
+            <li class="is-active"><a href="#" aria-current="page"> Food Index</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
 
 <body>
-    <div class="bulma-overlay-mixin-parent">
-        <div class="notification has-background-link">
-            <div class="is-size-2">
-                <div class="has-text-centered has-text-black-bis">
-                    Food Index
+    <div class="bulma-overlay-mixin-parent has-background-white">
+        <div class="notification is-info">
+            <div class="is-size-2 has-text-centered">
+                <div class="">
+                Food Index      
                 </div>
             </div>
         </div>
-    </div>
-    <div class="columns ">
-        <div class="column box bulma-overlay-mixin-parent">
-            <div class="search-container">
-                    <input type="text" placeholder="Search.." name="search">
-                    <button btn>Submit</button>
+    <div class="columns">
+        <div class="column is-half">
+            <figure class="image is-256x128">
+                <img class="is-rounded" src="assets\images\pexels-photo-770363.jpeg">
+            </figure>
+        </div>
+
+    <div class="message-body">
+        <article class="message is-primary">
+            <div class="is-size-4">
+                Food Index A-Z
             </div>
-        </div>
-        <div class="column box bulma-overlay-mixin-parent">
-            A-M<br>
-            <li id="itemContainer"></li>
-        </div>
-        <div class="column box bulma-overlay-mixin-parent">
-            N-Z <br>
-        </div>
+        </article>
     </div>
-
-
-
-    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script src="assets\js\food_api.js"></script>
-
-
+  </div>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="assets\js\food_api.js"></script>
 </body>
 </html>
