@@ -2,7 +2,6 @@ import { poisonsList } from "./data/poison_list.js";
 
 const poisonIndexHolder = $('#poison-index-holder');
 
-
 // Add on click for the poison sections
 
 function buildPoisonIndex(poisonList) {
@@ -39,7 +38,7 @@ function buildPoisonElement(poison) {
 
 function createEmptyPoisonElement() {
     // Add classes and the like to these
-    let listItem = $('<li>').addClass('level columns is-mobile');
+    let listItem = $('<li>').addClass('columns is-mobile is-gapless p-3');
     let poisonName = $('<p>').addClass('column is-half has-text-centered');
     let toxicity = $('<p>').addClass('column is-half has-text-centered');
 
@@ -83,11 +82,15 @@ function buildLetterSectionElement(letter) {
 
 function createEmptyLetterSectionElement() {
     // Add classes and the like to these
-    let section = $('<section>');
-    let letter = $('<h2>');
+    let section = $('<section>').addClass('has-text-centered letter-section');
+    let letter = $('<h2>').addClass('title is-6');
     let list = $('<ul>');
 
     return section.append(letter, list);
 }
 
 buildPoisonIndex(poisonsList);
+$('.letter-section').on('click', (event) => {
+    console.debug('clicked');
+    $(event.currentTarget).toggleClass('is-open');
+});
