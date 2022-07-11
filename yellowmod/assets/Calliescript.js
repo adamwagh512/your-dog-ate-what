@@ -46,12 +46,32 @@ function baseApiCall() {
 function populateModal(data) {
 
 }
+
+// Rename myFunction at some point
 function myFunction(clinics) {
-    // for (var i = 0; i < CLINIC_NUMBER; i++) {
-        let clinic = clinics[0];
+    for (var i = 0; i < CLINIC_NUMBER; i++) {
+        let clinic = clinics[i];
+        console.debug(clinic);
         let id = clinic.place_id;
-        let details = requestClinicDetails(id);
-    // }
+        requestClinicDetails(id)
+        .then(detail => {
+            let phoneNumber = console.debug(detail);
+            let clinicObject = {
+                address: clinic.formatted_address,
+                name: clinic.name,
+                phoneNumber: phoneNumber
+            };
+
+            // Get i-th clinic box element and pass it into here
+            populateClinicBox(clinicBoxElement, clinicObject);
+        });
+    }
+}
+
+// Take in a clinic box html element and fill it with details from the clinic object
+// Append to page if not already
+function populateClinicBox(clinicBoxElement, clinicObject) {
+
 }
 
 function requestClinicDetails(clinicId) {
@@ -63,11 +83,10 @@ function requestClinicDetails(clinicId) {
     }
     let requestUrl = buildRequestUrl(apiUrl, params);
     
-    fetch(requestUrl)
+    return fetch(requestUrl)
     .then(res => res.json())
     .then(data => {
-        console.debug(data)
-        return data;
+        return data.result.formatted_phone_number;
     });
 }
 
