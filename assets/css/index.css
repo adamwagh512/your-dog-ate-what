@@ -1,0 +1,55 @@
+:root {
+    --a1: #2C5959;
+    --a2: #B1D95B;
+    --a3: #D98859;
+    --a4: #A65233;
+    --a5: #5D7310;  
+}
+
+*{
+    color: black;
+}
+
+body {
+    background-color: var(--a4) ;
+}
+
+h1 {
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
+    background-color: var(--a5);
+}
+
+
+.panel {
+    background-color: var(--a1);
+}
+
+.panel-block {
+    color: white;
+}
+
+#dog {
+    max-width: 50vw
+}
+
+
+.button {
+    background-color: var(--a3);
+}
+
+.rs {
+    margin-top: 30px;
+    background-color: var(--a2);
+} 
+
+#logo {
+    width: 30px;   
+}
+
+.about-us {
+    text-align: center;
+}
+/* font-family: 'Coming Soon', cursive;
+font-family: 'Dosis', sans-serif;
+font-family: 'Lato', sans-serif; */
