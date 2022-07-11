@@ -17,7 +17,7 @@ function buildPoisonIndex(poisonList) {
             poisonStartingChar = '#';
         }
         // Group each element into its letter
-        if (!poisonElements.hasOwn(poisonStartingChar)) {
+        if (!Object.hasOwn(poisonElements, poisonStartingChar)) {
             poisonElements[poisonStartingChar] = [];
         }
         poisonElements[poisonStartingChar].push(poisonElement);
@@ -39,9 +39,9 @@ function buildPoisonElement(poison) {
 
 function createEmptyPoisonElement() {
     // Add classes and the like to these
-    let listItem = $('<li>');
-    let poisonName = $('<p>');
-    let toxicity = $('<p>');
+    let listItem = $('<li>').addClass('level columns is-mobile');
+    let poisonName = $('<p>').addClass('column is-half has-text-centered');
+    let toxicity = $('<p>').addClass('column is-half has-text-centered');
 
     return listItem.append(poisonName, toxicity);
 }
@@ -53,19 +53,23 @@ function populatePoisonElement(poisonElement, poison) {
     let severityString = '';
     let severityClass = '';
     switch(poison.toxicityLevel) {
-        case 1:
-            poisonString = 'Mild Toxicity';
+        case '1':
+            severityString = 'Mild Toxicity';
             severityClass = 'mild-hazard';
             break;
-        case 2:
-        case 3:
-            poisonString = 'Moderate Toxicity';
+        case '2':
+        case '3':
+            severityString = 'Moderate Toxicity';
             severityClass = 'moderate-hazard';
             break;
-        case 4:
-        case 5:
-            poisonString = 'Severe Toxicity';
+        case '4':
+        case '5':
+            severityString = 'Severe Toxicity';
             severityClass = 'severe-hazard';
+            break;
+        default:
+            severityString = 'Unknown Toxicity';
+            severityClass = 'unknown-hazard';
             break;
     }
     $(poisonElement.children('p')[1]).text(severityString).addClass(severityClass);
@@ -74,7 +78,7 @@ function populatePoisonElement(poisonElement, poison) {
 function buildLetterSectionElement(letter) {
     let sectionElement = createEmptyLetterSectionElement();
     sectionElement.children('h2').text(letter);
-    return letterSection;
+    return sectionElement;
 }
 
 function createEmptyLetterSectionElement() {
@@ -85,3 +89,5 @@ function createEmptyLetterSectionElement() {
 
     return section.append(letter, list);
 }
+
+buildPoisonIndex(poisonsList);
