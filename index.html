@@ -1,447 +1,477 @@
 <!-- Boiler plate  -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Links the fonts from google fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Dosis:wght@200&family=Lato&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Gloria+Hallelujah&family=Nanum+Pen+Script&family=Oswald:wght@500&display=swap" rel="stylesheet"
-    <!-- Links Bulma stylesheet -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <!-- Links my style sheet -->
-    <link rel="stylesheet" href="./assets/css/index.css">
-    <!-- Title for tab in browser -->
-    <title>Your Dog Ate What ?!? </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Links the fonts from google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&family=Dosis:wght@200&family=Lato&display=swap"
+    rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bangers&family=Gloria+Hallelujah&family=Nanum+Pen+Script&family=Oswald:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <!-- Links my style sheet -->
+  <link rel="stylesheet" href="./assets/css/index.css">
+  <link rel="stylesheet" href="./assets/css/poisonIndex.css">
+  <!-- Title for tab in browser -->
+  <title>Your Dog Ate What ?!? </title>
 </head>
+
 <body>
-    <!-- Columns is how Bulma organizes stuff -->
-    <div class="columns">
+  <!-- Columns is how Bulma organizes stuff -->
+  <div class="columns">
     <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
-        <div id="menu" class="column is-fullwidth">
-            <article class="panel">
-                <p class="panel-heading">
-                    <img id="logo" src="./assets/images/logo4.jpg" alt="">
-                    Your Dog Ate What?
-                </p>
-                    
-                <div class="panel-block">
-                    <p class="control has-icons-left">
-                        <span class="icon is-left">
-                            <i class="fas fa-search" aria-hidden="true"></i>
-                        </span>
-                    </p>
-                </div>
-            
-                <a class="panel-block" href="#aboutUs">
-                    <span class="panel-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                    </span>
-                    About Us
-                </a>
+    <div id="menu" class="column is-fullwidth">
+      <article class="panel">
+        <p class="panel-heading">
+          <img id="logo" src="./assets/images/logo4.jpg" alt="">
+          Your Dog Ate What?
+        </p>
 
-                <a class="panel-block">
-                    <span class="panel-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                    </span>
-                    Poison Index
-                </a>
-                    
-                <a class="panel-block" href="https://github.com/adamwagh512/your-dog-ate-what" target="_blank">
-                    <span class="panel-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                    </span>
-                    Documentation
-                </a>
-
-                <a class="panel-block" href="mailto: yourdogatewhat@gmail.com">
-                    <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                    </span>
-                    Contact Us
-                </a>    
-
-                <a class="panel-block">
-                    <span class="panel-icon">
-                    <i class="fas fa-book" aria-hidden="true"></i>
-                    </span>
-                    FAQs
-                </a>
-
-            </article>
-            
+        <div class="panel-block">
+          <p class="control has-icons-left">
+            <span class="icon is-left">
+              <i class="fas fa-search" aria-hidden="true"></i>
+            </span>
+          </p>
         </div>
-            
-        <div class="column">
-          
-          <div class="container is-max-desktop">
-            <div id="head" class="notification">
-              Your Dog Ate What?!
+
+        <a class="panel-block" id="about-us-button" data-target="#about-us-modal">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          About Us
+        </a>
+
+        <a class="panel-block" id="poison-index-button" data-target="#poison-index-modal">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          Poison Index
+        </a>
+
+        <a class="panel-block" id="faqs-button" data-target="#faqs-modal">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          FAQs
+        </a>
+
+        <a class="panel-block" href="https://github.com/adamwagh512/your-dog-ate-what" target="_blank">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          Documentation
+        </a>
+
+        <a class="panel-block" href="mailto: yourdogatewhat@gmail.com">
+          <span class="panel-icon">
+            <i class="fas fa-book" aria-hidden="true"></i>
+          </span>
+          Contact Us
+        </a>
+
+      </article>
+
+    </div>
+
+    <div class="column">
+
+      <div class="container is-max-desktop">
+        <div id="head" class="notification">
+          Your Dog Ate What?!
+        </div>
+      </div>
+      <div class="hero">
+        <div class="container">
+          <figure class="image is-256x256">
+            <img class="is-rounded" src="./assets/images/dr-dog.jpg" alt="dog eating cake">
+          </figure>
+        </div>
+      </div>
+
+      <div class="field">
+        <div class="control">
+          <!-- Giving input the ID of eaten -->
+          <textarea maxlength="25" id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
+        </div>
+      </div>
+      <!--Submit button  -->
+      <button id="submitBtn" class="button is-large is-fullwidth">Submit</button>
+    </div>
+
+    <div id="buttonsContainer" class="column">
+
+      <!-- Id tags used to hide buttons when not in use, class used for formating with bulma -->
+      <button id="rs1" class="button is-large is-fullwidth rs"></button>
+
+      <button id="rs2" class="button is-large is-fullwidth rs"></button>
+
+      <button id="rs3" class="button is-large is-fullwidth rs"></button>
+
+      <button id="rs4" class="button is-large is-fullwidth rs"></button>
+
+    </div>
+
+    <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
+
+  </div>
+  
+  <button id="no-hazard-debug-button" data-target="#no-hazard-modal">Show No Hazard</button>
+  <button id="maybe-hazard-debug-button" data-target="#maybe-hazard-modal">Show Maybe Hazard</button>
+  <button id="Other-Documentation-debug-button" data-target="#Other-Documentation-modal">Other Documentation</button>
+
+  <div id="about-us-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">About Us</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="columns">
+          <div class="column">
+            <h1 class="title is-1">Meet the Your Dog Ate What? team!</h1>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column about-us">
+            <h3 class="title is-3">Who we are </h3>
+            <p>
+              We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a
+              better place for dogs!
+            </p>
+            <h3 class="title is-3">Our Mission Statement </h3>
+            <p>
+              Our mission is to quickly provide free, accurate and actionable information to ensure that your dogs receive
+              appropriate medical care after they eat something they shouldn't have
+            </p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="./assets/images/kurt1.jpg" alt="Picture of Kurt">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="./assets/images/kurt1.jpg" alt="Picture of Kurt">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Kurt Bixby</p>
+                    <p class="subtitle is-6">Github: kurtbixby</p>
+                  </div>
+                </div>
+                <!-- not sure if we want descriptions, so commented them out for now -->
+                <div class="content">
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                          <a href="#">#css</a> <a href="#">#responsive</a>
+                          <br> -->
+                </div>
+              </div>
             </div>
           </div>
-          <div class="hero">
-            <div class="container">
-              <figure class="image is-256x256">
-                <img class="is-rounded" src="./assets/images/dr-dog.jpg" alt="dog eating cake">
-              </figure>
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="./assets/images/Marian_travel.JPG" alt="Placeholder image">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="./assets/images/Marian_travel.JPG" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Marian Fediuc</p>
+                    <p class="subtitle is-6">Github: marianfediuc</p>
+                  </div>
+                </div>
+      
+                <div class="content">
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                          <a href="#">#css</a> <a href="#">#responsive</a>
+                          <br> -->
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-
-            <div class="field">
-                <div class="control">
-                    <!-- Giving input the ID of eaten -->
-                    <textarea maxlength="25" id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="./assets/images/sierra1.png" alt="Picture of Sierra">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="./assets/images/sierra1.png" alt="Picture of Sierra">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Sierra Nutt</p>
+                    <p class="subtitle is-6">Github: SierraNN</p>
+                  </div>
                 </div>
+      
+                <div class="content">
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                          <a href="#">#css</a> <a href="#">#responsive</a>
+                          <br> -->
+                </div>
+              </div>
             </div>
-            <!--Submit button  -->
-            <button id="submitBtn" class="button is-large is-fullwidth">Submit</button>
-        </div>
-
-        <div id="buttonsContainer" class="column">
-            
-          <!-- Id tags used to hide buttons when not in use, class used for formating with bulma -->
-          <button id="rs1" class="button is-large is-fullwidth rs"></button>
-          
-          <button id="rs2" class="button is-large is-fullwidth rs"></button>
-          
-          <button id="rs3" class="button is-large is-fullwidth rs"></button>
-          
-          <button id="rs4" class="button is-large is-fullwidth rs"></button>
-
-      </div>
-        
-        <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
-     
-    </div>
-    <a id="aboutUs"></a>
-    <div class="columns">
-        <div class="column">
-            <h1 class="title is-1">Meet the Your Dog Ate What? team!</h1>
-        </div>
-    </div>
-    <div class="columns">
-        <div class="column"></div>
-        <div class="column about-us">
-            <h3 class="title is-3">Who we are </h3>
-                <p>
-                We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a better place for dogs!
-                </p>
-            <h3 class="title is-3">Our Mission Statement </h3>
-                <p>
-                Our mission is to quickly provide free, accurate and actionable information to ensure that your dogs receive appropriate medical care after they eat something they shouldn't have
-                </p>
-        </div>
-        <div class="column"></div>
-    </div>
-    <div class="columns">
-        <div class="column"></div>
-        <div class="column">
+          </div>
+          <div class="column">
             <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./assets/images/kurt1.jpg" alt="Picture of Kurt">
-                  </figure>
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="./assets/images/penny.jpg" alt="Penny the chocolate labradoodle">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="./assets/images/adam.jpg" alt="Picture of Adam">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Adam Wagh</p>
+                    <p class="subtitle is-6">Github: adamwagh512</p>
+                  </div>
                 </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="./assets/images/kurt1.jpg" alt="Picture of Kurt">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Kurt Bixby</p>
-                      <p class="subtitle is-6">Github: kurtbixby</p>
-                    </div>
-                  </div>
-            <!-- not sure if we want descriptions, so commented them out for now -->
-                  <div class="content">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br> -->
-                  </div>
+      
+                <div class="content">
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                          <a href="#">#css</a> <a href="#">#responsive</a>
+                          <br> -->
+      
                 </div>
               </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./assets/images/Marian_travel.JPG" alt="Placeholder image">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="./assets/images/Marian_travel.JPG" alt="Placeholder image">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Marian Fediuc</p>
-                      <p class="subtitle is-6">Github: marianfediuc</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br> -->
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="column"></div>
-    </div>
-    <div class="columns">
-        <div class="column"></div>
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./assets/images/sierra1.png" alt="Picture of Sierra">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="./assets/images/sierra1.png" alt="Picture of Sierra">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Sierra Nutt</p>
-                      <p class="subtitle is-6">Github: SierraNN</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br> -->
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./assets/images/penny.jpg" alt="Penny the chocolate labradoodle">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="./assets/images/adam.jpg" alt="Picture of Adam">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Adam Wagh</p>
-                      <p class="subtitle is-6">Github: adamwagh512</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br> -->
-                    
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="column"></div>
-    </div>
-    <div class="columns">
-        <div class="column"></div>
-        <div class="column">
-            <div class="card">
-                <div class="card-image">
-                  <figure class="image is-4by3">
-                    <img src="./assets/images/callie-dog.JPEG" alt="Callie's Dog">
-                  </figure>
-                </div>
-                <div class="card-content">
-                  <div class="media">
-                    <div class="media-left">
-                      <figure class="image is-48x48">
-                        <img src="./assets/images/Callie.jpg" alt="Picture of Callie">
-                      </figure>
-                    </div>
-                    <div class="media-content">
-                      <p class="title is-4">Callie Williams</p>
-                      <p class="subtitle is-6">Github: calliebwill</p>
-                    </div>
-                  </div>
-              
-                  <div class="content">
-                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                    <a href="#">#css</a> <a href="#">#responsive</a>
-                    <br> -->
-                  </div>
-                </div>
-              </div>
-        </div>
-        <div class="column"></div>
-    </div>
-    <button id="no-hazard-button" data-target="#no-hazard-modal">Show No Hazard</button>
-    <button id="maybe-hazard-button" data-target="#maybe-hazard-modal">Show Maybe Hazard</button>
-    <button id="Other-Documentation-button" data-target="#Other-Documentation-modal">Other Documentation</button>
-    <button id="FAQs-button" data-target="#FAQs-modal">FAQs</button>
-
-    <div id = "no-hazard-modal" class = "modal">
-        <div class = "modal-background">
-        </div>
-        <div class = "modal-content">
-            <div class="bulma-overlay-mixin-parent">
-                <div class="notification is-success">
-                    <div class="is-size-2 has-text-centered">
-                        <div class="">
-                        Phew! Your search is not toxic to dogs!
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-half">
-                        <figure class="image is-256x128">
-                            <img class="is-rounded" src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
-                        </figure>
-                    </div>
-                </div>
-                <div class="message-body">
-                    <article class="message is-primary">
-                        <div class="is-size-4">
-                            The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions or concerns.
-                            <!-- <br><br><br><br><br><br> -->
-                            <div class="is-size-2 has-text-centered">
-                                Toxicity Level
-                                <progress class="progress is-primary" value="1" max="100">100%</progress>
-                            </div>
-                            <div class="has-text-left is-size-4">  
-                                low
-                                <!-- <br><br><br><br><br><br> -->
-                            </div>
-                        </div>
-                    </article>
-                </div>
             </div>
-            <button class="my-modal-close">CLOSE ME</button>
+          </div>
         </div>
-    </div>
-
-    <div id = "maybe-hazard-modal" class = "modal">
-        <div class = "modal-background"></div>
-        <div class = "modal-content">
-            <div class="content is-larger">
-                <div class="has-text-centered has-background-warning">
-                    <h1 class="has-text-white	">Caution! Your search is potentially toxic to dogs.</h1>
+        <div class="columns">
+          <div class="column">
+            <div class="card">
+              <div class="card-image">
+                <figure class="image is-4by3">
+                  <img src="./assets/images/callie-dog.JPEG" alt="Callie's Dog">
+                </figure>
+              </div>
+              <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-48x48">
+                      <img src="./assets/images/Callie.jpg" alt="Picture of Callie">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="title is-4">Callie Williams</p>
+                    <p class="subtitle is-6">Github: calliebwill</p>
+                  </div>
                 </div>
+      
+                <div class="content">
+                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
+                          <a href="#">#css</a> <a href="#">#responsive</a>
+                          <br> -->
+                </div>
+              </div>
             </div>
-            <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions and concerns.</h2>
-            <figure class="image is- 1by1">
-                <img class="is-rounded" src="https://media.istockphoto.com/photos/funny-dog-linking-its-lips-with-tongue-out-isolated-on-yellow-picture-id1251347397?k=20&m=1251347397&s=612x612&w=0&h=CJYfQaqfJw10Iqor20yFc7z1YjuPeWZi4E-DPJIvBmw=">
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div id="no-hazard-modal" class="modal">
+    <div class="modal-background">
+    </div>
+    <div class="modal-content">
+      <div class="bulma-overlay-mixin-parent">
+        <div class="notification is-success">
+          <div class="is-size-2 has-text-centered">
+            <div class="">
+              Phew! Your search is not toxic to dogs!
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <figure class="image is-256x128">
+              <img class="is-rounded"
+                src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
             </figure>
-              <div>
-                <h3>Closest Veterniary Clinics Open Now</h3>
-                <!-- Nearest  Animal  Hospital will display here -->
-                <div class="box has-text-centered">
-                  <p>Clinic Name: </p>
-                  <p>Address: </p>
-                  <p>Phone Number: </p>
-                <!-- Option #2 (2nd nearest)  -->
-                </div>
-                <div class="box has-text-centered ">
-                  Vet option #2
-                </div>
-                <!-- Either 3rd nearest or potentially the nearest "24 hour animal hospital" -->
-                <div class="box has-text-centered ">
-                  Vet option #3
-                </div>
-              </div>
-        
-              
-              <div class="box has-text-centered">
-               <!-- Inserting the map right here. -->
-               <div id="googleMap" style="width:100%;height:400px;"></div>
-        
-               <script>
-               function myMap() {
-               var mapProp= {
-                 center:new google.maps.LatLng(51.508742,-0.120850),
-                 zoom:5,
-               };
-               var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-               }
-               </script>
-               
-               <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU&callback=myMap"></script>
-           
-               <script src="./assets/Calliescript.js"></script>
-              </div>
-            <button class="my-modal-close">CLOSE ME</button>
+          </div>
         </div>
-    </div>
-
-    <div id = "FAQs-modal" class = "modal">
-        <div class = "modal-background">
-        </div>
-        <div class = "modal-content">
-            <div class="bulma-stuff">
-                <!-- referencing the tutorial video for bulma stuff https://www.youtube.com/watch?v=IiPQYQT2-wg <div class="content"> is addind bottom padding-->
-                <div class="container">
-                    <div class="is-size-2 has-text-centered">
-                        <div class="">
-                        FAQs
-                        </div>
-                    </div>
-                </div>
-                <div class="columns">
-                    <div class="column is-half">
-                        <figure class="image is-256x128">
-                                <!-- Photo by Lina Kivaka from Pexels:  -->
-                            <img class="is-rounded" src="https://www.pexels.com/photo/silhouette-photo-of-person-beside-dog-3336180/">
-                        </figure>
-                    </div>
-            
-                    <div class="message-body">
-                        <article class="message is-primary">
-                            <div class="is-size-4">
-                                why did we build this web site?
-                                    <!--we will se later if we use this space style <br> (or botom padding) <br><br><br><br><br><br> -->
-                                <div class="is-size-2 has-text-centered">
-                                    R: people around the world love their pets, included them as a beloved member of the family, this web site is ment to give valuable information to the pet owners about dog health protection tool
-                                    <!-- <progress class="progress is-primary" value="1" max="100">100%</progress> -->
-                                </div>
-                                <div class="has-text-left is-size-4">  
-                                    low
-                                    <!-- <br><br><br><br><br><br> -->
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
+        <div class="message-body">
+          <article class="message is-primary">
+            <div class="is-size-4">
+              The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any
+              abnormal behavior and contact your veternarian with questions or concerns.
+              <!-- <br><br><br><br><br><br> -->
+              <div class="is-size-2 has-text-centered">
+                Toxicity Level
+                <progress class="progress is-primary" value="1" max="100">100%</progress>
+              </div>
+              <div class="has-text-left is-size-4">
+                low
+                <!-- <br><br><br><br><br><br> -->
+              </div>
             </div>
-
-            <button class="my-modal-close">CLOSE ME</button>
-
-
+          </article>
         </div>
+      </div>
+      <button class="my-modal-close">CLOSE ME</button>
     </div>
+  </div>
 
-    <!-- Jquery Script tag -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <!-- Script tag for my JS -->
-    <script src="./assets/js/index.js"></script>
+  <div id="maybe-hazard-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="content is-larger">
+        <div class="has-text-centered has-background-warning">
+          <h1 class="has-text-white	">Caution! Your search is potentially toxic to dogs.</h1>
+        </div>
+      </div>
+      <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to dogs!
+        Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions and
+        concerns.</h2>
+      <figure class="image is- 1by1">
+        <img class="is-rounded"
+          src="https://media.istockphoto.com/photos/funny-dog-linking-its-lips-with-tongue-out-isolated-on-yellow-picture-id1251347397?k=20&m=1251347397&s=612x612&w=0&h=CJYfQaqfJw10Iqor20yFc7z1YjuPeWZi4E-DPJIvBmw=">
+      </figure>
+      <div>
+        <h3>Closest Veterniary Clinics Open Now</h3>
+        <!-- Nearest  Animal  Hospital will display here -->
+        <div class="box has-text-centered">
+          <p>Clinic Name: </p>
+          <p>Address: </p>
+          <p>Phone Number: </p>
+          <!-- Option #2 (2nd nearest)  -->
+        </div>
+        <div class="box has-text-centered ">
+          Vet option #2
+        </div>
+        <!-- Either 3rd nearest or potentially the nearest "24 hour animal hospital" -->
+        <div class="box has-text-centered ">
+          Vet option #3
+        </div>
+      </div>
+
+
+      <div class="box has-text-centered">
+        <!-- Inserting the map right here. -->
+        <div id="googleMap" style="width:100%;height:400px;"></div>
+
+        <script>
+          function myMap() {
+            var mapProp = {
+              center: new google.maps.LatLng(51.508742, -0.120850),
+              zoom: 5,
+            };
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+          }
+        </script>
+
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU&callback=myMap"></script>
+
+        <script src="./assets/Calliescript.js"></script>
+      </div>
+      <button class="my-modal-close">CLOSE ME</button>
+    </div>
+  </div>
+
+  <div id="faqs-modal" class="modal">
+    <div class="modal-background">
+    </div>
+    <div class="modal-content">
+      <div class="bulma-stuff">
+        <!-- referencing the tutorial video for bulma stuff https://www.youtube.com/watch?v=IiPQYQT2-wg <div class="content"> is addind bottom padding-->
+        <div class="container">
+          <div class="is-size-2 has-text-centered">
+            <div class="">
+              FAQs
+            </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-half">
+            <figure class="image is-256x128">
+              <!-- Photo by Lina Kivaka from Pexels:  -->
+              <img class="is-rounded" src="https://www.pexels.com/photo/silhouette-photo-of-person-beside-dog-3336180/">
+            </figure>
+          </div>
+
+          <div class="message-body">
+            <article class="message is-primary">
+              <div class="is-size-4">
+                why did we build this web site?
+                <!--we will se later if we use this space style <br> (or botom padding) <br><br><br><br><br><br> -->
+                <div class="is-size-2 has-text-centered">
+                  R: people around the world love their pets, included them as a beloved member of the family, this web
+                  site is ment to give valuable information to the pet owners about dog health protection tool
+                  <!-- <progress class="progress is-primary" value="1" max="100">100%</progress> -->
+                </div>
+                <div class="has-text-left is-size-4">
+                  low
+                  <!-- <br><br><br><br><br><br> -->
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <button class="my-modal-close">CLOSE ME</button>
+    </div>
+  </div>
+
+  <div id="poison-index-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Poison Index</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div id="poison-index-holder" class="wrapper"></div>
+      </section>
+    </div>
+  </div>
+
+  <!-- Jquery Script tag -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Script tag for my JS -->
+  <script src="./assets/js/index.js"></script>
+  <script type="module" src="./assets/js/poisonIndex.js"></script>
 </body>
+
 </html>
