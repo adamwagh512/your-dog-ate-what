@@ -1,52 +1,50 @@
+import { poisonsList } from "./data/poison_list.js";
+export { determineInputToxicity };
 
 var access_key = '6orO8TB9RRot89tK';
-var userInput = "Cheese";
 
-const poisonsList = [
-    {"name":"ACE-inhibitors","link":"https://www.petpoisonhelpline.com/poison/ace-inhibitors/","category":"Medications","alternateNames":[" angiotensin-converting enzyme inhibitor","enalapril","captopril","lisinopril","ramipril","imidapril","benazepril","Enacard","Lotensin","Capoten","Vasotec","Prinivel","Zestril","fosinopril","moexipril","perindopril","quinapril","trandolapril "],"toxicityLevel":"1"},
-    {"name":"Acetaminophen","link":"https://www.petpoisonhelpline.com/poison/acetaminophen/","category":"medications","alternateNames":["Tylenol","paracetamol","APAP","Percocet","Panadol","Excedrin","Feverall"],"toxicityLevel":"3"},
-    {"name":"Acids","link":"https://www.petpoisonhelpline.com/poison/acids/","category":"household items","alternateNames":["acid","acidic","battery","batteries","battery fluid","drain cleaner","toilet bowl cleaner","sulfuric acid","danger","hydrochloric acid","acetic acid","metal cleaners","pH","anti-rust compounds","hair wave neutralizers","drain cleaners"],"toxicityLevel":"4"},
-    {"name":"Alcohol","link":"https://www.petpoisonhelpline.com/poison/alcohol/","category":"foods","alternateNames":["alcohol","mixed drinks","beer","liquor","ethanol","unbaked bread dough","yeast","wine","spirits","cocktails"],"toxicityLevel":"2"},
-    {"name":"Alkalis","link":"https://www.petpoisonhelpline.com/poison/alkalis/","category":"household items","alternateNames":["alkaline","pH","base","sodium hypochlorite","bleach","dishwasher detergent","batteries","dry cell batteries","cement","drain cleaner","hair relaxer","lye","oven cleaner","danger","caustic","hydroxide"],"toxicityLevel":"4"},
-    {"name":"Ambien","link":"https://www.petpoisonhelpline.com/poison/ambien/","category":"medications","alternateNames":["Lunesta","Ambien","zolpidem","eszopiclone","zaleplon","Sonata"],"toxicityLevel":"2"},
-    {"name":"Amphetamines","link":"https://www.petpoisonhelpline.com/poison/amphetamines/","category":"medications","alternateNames":["ADD medication","ADHD medication","methylphenidate","ecstasy","methylphenidate","dextroamphetamine","amphetamine","Adderall","D-amphetamine","Dexedrine","methamphetamine","Desoxyn","lisdexamfetamine","Vyvanse"],"toxicityLevel":"4"},
-    {"name":"Antibiotics","link":"https://www.petpoisonhelpline.com/poison/antibiotic/","category":"medications","alternateNames":["neosporin","triple antibiotic","bacitracin","neomycin","polymyxin","topical","enrofloxacin","ampicillin","amoxicillin","Clavamox","Baytril","Keflex","cephalosporins","isoniazid"],"toxicityLevel":"4"},
-    {"name":"Antidepressants","link":"https://www.petpoisonhelpline.com/poison/antidepressants/","category":"medications","alternateNames":["SSRIs","antidepressants","selective serotonin reuptake inhibitors","Cymbalta","Effexor","Prozac","Reconcile","fluoxetine","citalopram","escitalopram","paroxetine","sertraline","Celexa","Lexapro","Paxil","Zoloft","selective norepinephrine re-uptake inhibitors","SNRIs","duloxetine","nefazodone","Serzone","venlafaxine"],"toxicityLevel":""},
-    {"name":"Antihistamines","link":"https://www.petpoisonhelpline.com/poison/antihistamine/","category":"medications","alternateNames":["Benadryl","Caldryl","Dermamycin","Ziradryl","diphenhydramine","DPH"],"toxicityLevel":"4"}
-];
+function determineInputToxicity(eatenInput) {
+    let requestURL = 'https://chompthis.com/api/v2/food/branded/name.php?api_key=6orO8TB9RRot89tK&name=' + eatenInput;
 
-let requestURL = 'https://chompthis.com/api/v2/food/branded/name.php?api_key=6orO8TB9RRot89tK&name=' + userInput;
-
-fetch(requestURL)
-.then((response) => {
-    return response.json();
-})
-.then((data) => {
-
-    let foodItems = data.items;
-
-    // Select certain items (1 = ???)
-    // Determine if each item has toxins
-    // Comparing ingred. list against our poison list
-    let foodItem = foodItems[0];
-    let toxicityLevel = determineFoodToxicity(foodItem);
-    return toxicityLevel;
-})
+    return fetch(requestURL)
+    .then((response) => {
+        return response.json();
+    })
+    .then((data) => {
+        let foodItems = data.items;
+    
+        // Select certain items (1 = ???)
+        // Determine if each item has toxins
+        // Comparing ingred. list against our poison list
+        let maxToxicity = 0;
+        for (var i = 0; i < foodItems.length; i++) {
+            let foodItem = foodItems[i];
+            let toxicityLevel = determineFoodToxicity(foodItem);
+            maxToxicity = Math.max(maxToxicity, toxicityLevel);
+        }
+        console.log(maxToxicity)
+        return maxToxicity;
+    })
+}
 
 // Return toxicity level 0, 1, 2, 3
 // Unknown, mild, moderate, severe
 function determineFoodToxicity(foodItem) {
+    console.log(foodItem)
     // Parse the ingredients list string into ingredients
     let ingredients = parseIngredientsString(foodItem.ingredients);
 
     // Object of all the poisons names + alternate name with values of toxicity level
     let processedPoisons = createPoisonSet(poisonsList);
+    console.log(processedPoisons)
 
     let mostToxic = 0;
     for (var i = 0; i < ingredients.length; i++) {
-        let ingredient = ingredients[i];
+        let ingredient = ingredients[i].toLowerCase();
+        console.debug('Ingredient: ' + ingredient)
         // Check if in poisons
-        if (Object.hasOwn(processedPoisons, ingredient)) {
+        if (processedPoisons[ingredient]) {
+            console.debug('known poison')
             mostToxic = Math.max(mostToxic, processedPoisons[ingredient]);
         }
     }
@@ -55,13 +53,21 @@ function determineFoodToxicity(foodItem) {
 
 function createPoisonSet(specificPoisonsList) {
     let poisonSet = {}
-    specificPoisonsList.forEach(poison => {
+    for (var i = 0; i < specificPoisonsList.length; i++) {
+        let poison = specificPoisonsList[i];
         let toxicity = poison.toxicityLevel;
-        poison.name = toxicity;
-            poison.alternateNames.forEach(name => {
-            poisonSet[name] = toxicity;
+        if (toxicity == '') {
+            continue;
+        }
+        let names = poison.alternateNames;
+        names.push(poison.name);
+        names.forEach((name) => {
+            let lowercase = name.toLowerCase();
+            if (!poisonSet[lowercase]) {
+                poisonSet[lowercase] = toxicity;
+            }
         })
-    });
+    }
 
     return poisonSet;
 }
@@ -81,44 +87,3 @@ function parseIngredientsString(ingredientsString) {
 
     return fullyParsed;
 }
-
-//take eatenInput
-//compare eatenInput against ingredient list
-//function to pull toxicity level of item
-//return modal of corresponding toxicity level
-
-//take eaten input and compare against posion list
-function getToxLevel() {
-    document.getElementById("submitBtn").innerHTML = eatenToxicity();
-   return result;
-}
-
-//get toxicity level
-function eatenToxicity(event){ 
-
-    for(i = 0; i <= createPoisonSet().length; i++){
-
-        if (eatenInput.equals(ingredients[i])){
-            document.getElementById("").innerHTML = determineFoodToxicity();
-            console.log('eatenInputToxicity');
-            return result;
-            
-            
-        } else if (eatenInput != ingredients){
-            //function unknownHazardHandler(event);
-            console.log('unknown');
-            
-        } else {
-            //function unknownHazardHandler(event);
-            console.log('unknown');
-        }
-    }
-    return eatenToxicity;
-}
-
-
-//show modal will go inside eatenToxicity function
-function myFunction() {
-    document.getElementById("demo").innerHTML = eatenToxicity;
-}
-
