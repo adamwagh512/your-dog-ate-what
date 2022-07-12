@@ -1,0 +1,16 @@
+.letter-section ul li:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+.letter-section {
+    border-bottom-style: solid;
+}
+
+.letter-section ul {
+    display: none;
+    transition: all 0.1s ease-in-out;
+}
+
+.is-open ul {
+    display: block;
+}

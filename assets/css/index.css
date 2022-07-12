@@ -1,9 +1,9 @@
 :root {
     --a1: #2C5959;
-    --a2: #E5D0CC;
+    --a2: #cf959d;
     --a3: #CA2E55;
     --a4: #D5A021;
-    --a5: #2D82B7;  
+    --a5: #E5D0CC;  
 }
 
 *{
@@ -14,8 +14,24 @@ body {
     background-color: var(--a4) ;
 }
 
+#head {
+    font-family: 'Oswald', sans-serif;
+    font-weight: bolder;
+    font-size: xx-large;
+    text-align: center;
+    text-shadow:  1px 1px #61a8b5 ;
+    background-color: var(--a5);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+}
+#hero {
+    margin-bottom: 20px;
+
+}
 h1 {
-    font-family: 'Dosis', sans-serif;
+    
+    font-family: 'Nanum Pen Script', cursive;;
     text-align: center;
     background-color: var(--a5);
 }
@@ -27,31 +43,42 @@ head {
     background-color: var(--a5);
     margin-top: 20px;
 }
+.textarea {
+
+    margin-top: 20px ;
+}
+
 
 .panel {
     background-color: var(--a1);
+    font-family: 'Bangers', cursive;
+    
 }
 
 .panel-block {
     color: white;
+    font-family: 'Bangers', cursive;
 }
 
 #dog {
-    max-width: 50vw
+    max-width: 50vw;
 }
 
 
 .button {
     background-color: var(--a3);
+    
 }
 
 .rs {
     margin-top: 30px;
     background-color: var(--a2);
+   
 } 
 
 #logo {
-    width: 30px;   
+    width: 30px;
+    font-family: 'Bangers', cursive;  
 }
 
 .about-us {

@@ -71,11 +71,19 @@ function onclickhandler(event) {
 
 function indexPageInit() {
     $("#submitBtn").on('click', submitEatenHandler);
+    $('#about-us-button').on('click', showModalHandler);
+    $('#poison-index-button').on('click', showModalHandler);
+    $('#faqs-button').on('click', showModalHandler);
 }
 
 function debugInit() {
-    $("#no-hazard-button").on('click', showNoHazardHandler);
-    $("#maybe-hazard-button").on('click', showMaybeHazardHandler);
+    $("#no-hazard-debug-button").on('click', showModalHandler);
+    $("#maybe-hazard-debug-button").on('click', showModalHandler);
+    $("#faqs-debug-button").on('click', showModalHandler);
+    $("#poison-index-debug-button").on('click', showModalHandler);
+    $("#about-us-debug-button").on('click', showModalHandler);
+    $("#definite-hazard-debug-button").on('click', showModalHandler);
+    $("#unknown-hazard-debug-button").on('click', showModalHandler);
 
     $(".my-modal-close").click(function() {
         $("html").removeClass("is-clipped");
@@ -90,6 +98,7 @@ function submitEatenHandler(event) {
     console.log(eatenInput);
 }
 
+<<<<<<< HEAD
 function showNoHazardHandler(event) {
   console.log("showMaybeHazardHandler");
   let target = $(this).data("target");
@@ -107,6 +116,39 @@ function showModal(target) {
   $("html").addClass("is-clipped");
   $(target).addClass("is-active");
 }
+=======
+function showModalHandler(event) {
+    console.log("showModal");
+    let modalDiv = $(this).data("target");
+    $("html").addClass("is-clipped");
+    $(modalDiv).addClass("is-active");
+}
+
+// function indexPageInit() {
+//     $("#submitBtn").on('click', submitEatenHandler);
+// }
+
+
+
+    // $(".my-modal-close").click(function() {
+    //     $("html").removeClass("is-clipped");
+    //     $(this).parents('.modal').removeClass("is-active");
+    //  });
+
+
+
+
+// $(".modal-button").click(function() {
+//     var target = $(this).data("target");
+//     $("html").addClass("is-clipped");
+//     $(target).addClass("is-active");
+//  });
+ 
+//  $(".my-modal-close").click(function() {
+//     $("html").removeClass("is-clipped");
+//     $(this).parents('.modal').removeClass("is-active");
+//  });
+>>>>>>> main
 
 debugInit()
 indexPageInit()
