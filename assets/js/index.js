@@ -53,6 +53,8 @@ function debugInit() {
     $("#faqs-debug-button").on('click', showModalHandler);
     $("#poison-index-debug-button").on('click', showModalHandler);
     $("#about-us-debug-button").on('click', showModalHandler);
+    $("#definite-hazard-debug-button").on('click', showModalHandler);
+    $("#unknown-hazard-debug-button").on('click', showModalHandler);
 
     $(".my-modal-close").click(function() {
         $("html").removeClass("is-clipped");
