@@ -98,25 +98,6 @@ function submitEatenHandler(event) {
     console.log(eatenInput);
 }
 
-<<<<<<< HEAD
-function showNoHazardHandler(event) {
-  console.log("showMaybeHazardHandler");
-  let target = $(this).data("target");
-  showModal(target)
-}
-
-function showMaybeHazardHandler(event) {
-    console.log("showMaybeHazardHandler");
-    let target = $(this).data("target");
-    showModal(target)
-}
-
-function showModal(target) {
-  console.log(target);
-  $("html").addClass("is-clipped");
-  $(target).addClass("is-active");
-}
-=======
 function showModalHandler(event) {
     console.log("showModal");
     let modalDiv = $(this).data("target");
@@ -148,7 +129,6 @@ function showModalHandler(event) {
 //     $("html").removeClass("is-clipped");
 //     $(this).parents('.modal').removeClass("is-active");
 //  });
->>>>>>> main
 
 debugInit()
 indexPageInit()
