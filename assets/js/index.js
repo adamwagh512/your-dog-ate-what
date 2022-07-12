@@ -42,13 +42,17 @@ function onclickhandler(event) {
 
 function indexPageInit() {
     $("#submitBtn").on('click', submitEatenHandler);
+    $('#about-us-button').on('click', showModalHandler);
+    $('#poison-index-button').on('click', showModalHandler);
+    $('#faqs-button').on('click', showModalHandler);
 }
 
 function debugInit() {
-    $("#no-hazard-button").on('click', showNoHazardHandler);
-    $("#maybe-hazard-button").on('click', showMaybeHazardHandler);
-    $("#FAQs-button").on('click', FAQsHandler);
-    $("#poison-index-button").on('click', PoisonIndex);
+    $("#no-hazard-debug-button").on('click', showModalHandler);
+    $("#maybe-hazard-debug-button").on('click', showModalHandler);
+    $("#faqs-debug-button").on('click', showModalHandler);
+    $("#poison-index-debug-button").on('click', showModalHandler);
+    $("#about-us-debug-button").on('click', showModalHandler);
 
     $(".my-modal-close").click(function() {
         $("html").removeClass("is-clipped");
@@ -63,30 +67,8 @@ function submitEatenHandler(event) {
     console.log(eatenInput);
 }
 
-function showNoHazardHandler(event) {
-    console.log("showNoHazardHandler");
-    let modalDiv = $(this).data("target");
-    $("html").addClass("is-clipped");
-    $(modalDiv).addClass("is-active");
-}
-
-function showMaybeHazardHandler(event) {
-    console.log("showMaybeHazardHandler");
-    let modalDiv = $(this).data("target");
-    console.log(modalDiv);
-    $("html").addClass("is-clipped");
-    $(modalDiv).addClass("is-active");
-}
-
-function FAQsHandler(event) {
-    console.log("FAQsHandler");
-    let modalDiv = $(this).data("target");
-    $("html").addClass("is-clipped");
-    $(modalDiv).addClass("is-active");
-}
-
-function PoisonIndex(event) {
-    console.log("Poisons");
+function showModalHandler(event) {
+    console.log("showModal");
     let modalDiv = $(this).data("target");
     $("html").addClass("is-clipped");
     $(modalDiv).addClass("is-active");
