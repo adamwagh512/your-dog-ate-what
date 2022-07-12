@@ -52,7 +52,7 @@ function searchFunction(userInput) {
       case 4:
       case 5:
         // Severed
-        showModal('#definitely-hazard-modal');
+        showModal('#definite-hazard-modal');
         break;
       default:
         // Unknown
@@ -100,9 +100,12 @@ function submitEatenHandler(event) {
 
 function showModalHandler(event) {
     console.log("showModal");
-    let modalDiv = $(this).data("target");
+    showModal($(this).data("target"));
+}
+
+function showModal(target) {
     $("html").addClass("is-clipped");
-    $(modalDiv).addClass("is-active");
+    $(target).addClass("is-active");
 }
 
 // function indexPageInit() {
