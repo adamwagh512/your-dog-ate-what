@@ -22,7 +22,7 @@
     <!-- Columns is how Bulma organizes stuff -->
     <div class="columns">
     <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
-        <div id="menu" class="column is-half">
+        <div id="menu" class="column is-fullwidth">
             <article class="panel">
                 <p class="panel-heading">
                     <img id="logo" src="./assets/images/logo4.jpg" alt="">
@@ -73,18 +73,7 @@
                 </a>
 
             </article>
-            <div id="buttonsContainer" class="column">
             
-              <!-- Id tags used to hide buttons when not in use, class used for formating with bulma -->
-              <button id="rs1" class="button is-large is-fullwidth rs"></button>
-              
-              <button id="rs2" class="button is-large is-fullwidth rs"></button>
-              
-              <button id="rs3" class="button is-large is-fullwidth rs"></button>
-              
-              <button id="rs4" class="button is-large is-fullwidth rs"></button>
-  
-          </div>
         </div>
             
         <div class="column">
@@ -105,12 +94,25 @@
             <div class="field">
                 <div class="control">
                     <!-- Giving input the ID of eaten -->
-                    <textarea id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
+                    <textarea maxlength="25" id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
                 </div>
             </div>
             <!--Submit button  -->
             <button id="submitBtn" class="button is-large is-fullwidth">Submit</button>
         </div>
+
+        <div id="buttonsContainer" class="column">
+            
+          <!-- Id tags used to hide buttons when not in use, class used for formating with bulma -->
+          <button id="rs1" class="button is-large is-fullwidth rs"></button>
+          
+          <button id="rs2" class="button is-large is-fullwidth rs"></button>
+          
+          <button id="rs3" class="button is-large is-fullwidth rs"></button>
+          
+          <button id="rs4" class="button is-large is-fullwidth rs"></button>
+
+      </div>
         
         <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
      

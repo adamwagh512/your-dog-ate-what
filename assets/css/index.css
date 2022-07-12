@@ -18,12 +18,12 @@ body {
     font-family: 'Oswald', sans-serif;
     font-weight bolder ;
     font-size: xx-large;
-    te
-    text-align: center;
+ text-align: center;
     text-shadow:  1px 1px #61a8b5 ;
     background-color: var(--a5);
     margin-top: 20px;
     margin-bottom: 20px;
+    
 }
 #hero {
     margin-bottom: 20px;
@@ -41,6 +41,7 @@ h1 {
 .panel {
     background-color: var(--a1);
     font-family: 'Bangers', cursive;
+    
 }
 
 .panel-block {
@@ -61,9 +62,7 @@ h1 {
 .rs {
     margin-top: 30px;
     background-color: var(--a2);
-    word-wrap: break-word;
-    white-space: normal;
-    max-width: 200px;
+   
 } 
 
 #logo {
