@@ -122,9 +122,11 @@
     <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
 
   </div>
-  
+
   <button id="no-hazard-debug-button" data-target="#no-hazard-modal">Show No Hazard</button>
   <button id="maybe-hazard-debug-button" data-target="#maybe-hazard-modal">Show Maybe Hazard</button>
+  <button id="definite-hazard-debug-button" data-target="#definite-hazard-modal">Show Definite Hazard</button>
+  <button id="unknown-hazard-debug-button" data-target="#unknown-hazard-modal">Show Unknown Hazard</button>
   <button id="Other-Documentation-debug-button" data-target="#Other-Documentation-modal">Other Documentation</button>
 
   <div id="about-us-modal" class="modal">
@@ -144,12 +146,14 @@
           <div class="column about-us">
             <h3 class="title is-3">Who we are </h3>
             <p>
-              We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a
+              We are a group of dog loving coding students who came together with one simple goal in mind; Make the
+              world a
               better place for dogs!
             </p>
             <h3 class="title is-3">Our Mission Statement </h3>
             <p>
-              Our mission is to quickly provide free, accurate and actionable information to ensure that your dogs receive
+              Our mission is to quickly provide free, accurate and actionable information to ensure that your dogs
+              receive
               appropriate medical care after they eat something they shouldn't have
             </p>
           </div>
@@ -203,7 +207,7 @@
                     <p class="subtitle is-6">Github: marianfediuc</p>
                   </div>
                 </div>
-      
+
                 <div class="content">
                   <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -234,7 +238,7 @@
                     <p class="subtitle is-6">Github: SierraNN</p>
                   </div>
                 </div>
-      
+
                 <div class="content">
                   <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -263,13 +267,13 @@
                     <p class="subtitle is-6">Github: adamwagh512</p>
                   </div>
                 </div>
-      
+
                 <div class="content">
                   <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
                           <a href="#">#css</a> <a href="#">#responsive</a>
                           <br> -->
-      
+
                 </div>
               </div>
             </div>
@@ -295,7 +299,7 @@
                     <p class="subtitle is-6">Github: calliebwill</p>
                   </div>
                 </div>
-      
+
                 <div class="content">
                   <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                           Phasellus nec iaculis mauris. <a>@bulmaio</a>.
@@ -307,6 +311,23 @@
           </div>
         </div>
       </section>
+    </div>
+  </div>
+
+  <div id="unknown-hazard-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="content is-larger">
+        <div class="has-text-centered has-background-info">
+          <h1 class="has-text-black">Ruh-oh! .</h1>
+        </div>
+      </div>
+      <h2 class="has-text-centered has-text-weight-semibold	">We currently don't have your search query in our database!
+        Feel free to reach out at yourdogatewhat@gmail.com</h2>
+      <figure class="image is- 1by1">
+        <img class="is-rounded"
+          src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
+      </figure>
     </div>
   </div>
 
@@ -360,8 +381,10 @@
           <h1 class="has-text-white	">Caution! Your search is potentially toxic to dogs.</h1>
         </div>
       </div>
-      <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to dogs!
-        Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions and
+      <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to
+        dogs!
+        Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions
+        and
         concerns.</h2>
       <figure class="image is- 1by1">
         <img class="is-rounded"
@@ -402,12 +425,64 @@
 
         <script
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU&callback=myMap"></script>
-
-        <script src="./assets/Calliescript.js"></script>
       </div>
       <button class="my-modal-close">CLOSE ME</button>
     </div>
   </div>
+
+  <div id="definite-hazard-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content">
+      <div class="content is-larger">
+        <div class="has-text-centered has-background-danger">
+          <h1 class="has-text-black	"> Your search is toxic to dogs!</h1>
+        </div>
+      </div>
+      <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is considered hazardous to dogs!
+        Please seek medical attention for your dog.</h2>
+      <figure class="image is- 1by1">
+        <img class="is-rounded"
+          src="https://media.istockphoto.com/photos/portrait-of-a-dalmatian-dog-on-a-red-background-picture-id1287164463?k=20&m=1287164463&s=612x612&w=0&h=Q3_hVr-0McDGed7RD25AMByej2wvGvTnxwWSOCiTRQQ=">
+      </figure>
+      <div>
+        <h3>Closest Veterniary Clinics Open Now</h3>
+        <!-- Nearest  Animal  Hospital will display here -->
+        <div class="box has-text-centered">
+          <p>Clinic Name: </p>
+          <p>Address: </p>
+          <p>Phone Number: </p>
+          <!-- Option #2 (2nd nearest)  -->
+        </div>
+        <div class="box has-text-centered ">
+          Vet option #2
+        </div>
+        <!-- Either 3rd nearest or potentially the nearest "24 hour animal hospital" -->
+        <div class="box has-text-centered ">
+          Vet option #3
+        </div>
+
+        <div class="box has-text-centered">
+          <!-- Inserting the map right here. -->
+          <div id="googleMap" style="width:100%;height:400px;"></div>
+
+          <script>
+            function myMap() {
+              var mapProp = {
+                center: new google.maps.LatLng(51.508742, -0.120850),
+                zoom: 5,
+              };
+              var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+            }
+          </script>
+
+          <script
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU&callback=myMap"></script>
+        </div>
+        <button class="my-modal-close">CLOSE ME</button>
+      </div>
+    </div>
+  </div>
+
 
   <div id="faqs-modal" class="modal">
     <div class="modal-background">
@@ -436,7 +511,8 @@
                 why did we build this web site?
                 <!--we will se later if we use this space style <br> (or botom padding) <br><br><br><br><br><br> -->
                 <div class="is-size-2 has-text-centered">
-                  R: people around the world love their pets, included them as a beloved member of the family, this web
+                  R: people around the world love their pets, included them as a beloved member of the family, this
+                  web
                   site is ment to give valuable information to the pet owners about dog health protection tool
                   <!-- <progress class="progress is-primary" value="1" max="100">100%</progress> -->
                 </div>
