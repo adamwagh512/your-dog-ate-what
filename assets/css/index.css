@@ -16,9 +16,9 @@ body {
 
 #head {
     font-family: 'Oswald', sans-serif;
-    font-weight bolder ;
+    font-weight: bolder;
     font-size: xx-large;
- text-align: center;
+    text-align: center;
     text-shadow:  1px 1px #61a8b5 ;
     background-color: var(--a5);
     margin-top: 20px;
@@ -33,10 +33,16 @@ h1 {
     
     font-family: 'Nanum Pen Script', cursive;;
     text-align: center;
-    text-size-adjust: ;
     background-color: var(--a5);
 }
 
+head {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-shadow:  1px 1px #2C5959 ;
+    background-color: var(--a5);
+    margin-top: 20px;
+}
 .textarea {
 
     margin-top: 20px ;

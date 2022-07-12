@@ -1,3 +1,4 @@
+import { determineInputToxicity } from './food_api.js'
 
 //Creates an empty JavaScript Array
 var recentSearches = [];
@@ -9,7 +10,7 @@ function loadRecentSearches() {
   // Console log for testing purposes
   console.log(storedSearches);
   // For each item in the array,
-  for (i = 0; i < storedSearches.length; i++) {
+  for (var i = 0; i < storedSearches.length; i++) {
     // A new button is revealed
     var button = $(`#rs${i + 1}`);
     button.show();
@@ -21,16 +22,44 @@ function loadRecentSearches() {
 }
 
 //this function is called every time the submit button is clicked.
-function searchFunction(data) {
-  // pushes eaten value into an empty array
-  recentSearches.unshift($("#eaten").val());
+function searchFunction(userInput) {
+  // Check if empty
 
-  // If there are more than 4 recent searches, the oldest one is removed from the array
-  if (recentSearches.length > 4) {
-    recentSearches.pop();
-  }
-  //Converts recentSearches array into something that can be stored in local storage.
-  localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+  console.log(userInput);
+  determineInputToxicity(userInput)
+  .then((toxicity) => {
+
+    // pushes eaten value into an empty array
+    recentSearches.unshift($("#eaten").val());
+
+    // If there are more than 4 recent searches, the oldest one is removed from the array
+    if (recentSearches.length > 4) {
+      recentSearches.pop();
+    }
+    //Converts recentSearches array into something that can be stored in local storage.
+    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+
+    switch(toxicity) {
+      case 1:
+        // Mild
+        showModal('#no-hazard-modal');
+        break;
+      case 2:
+      case 3:
+        // Moderate
+        showModal('#maybe-hazard-modal');
+        break;
+      case 4:
+      case 5:
+        // Severed
+        showModal('#definite-hazard-modal');
+        break;
+      default:
+        // Unknown
+        showModal('#who-knows-modal');
+        break;
+    }
+  });
 }
 
 //This function was made to try to make it easier to wire everything up later
@@ -71,9 +100,12 @@ function submitEatenHandler(event) {
 
 function showModalHandler(event) {
     console.log("showModal");
-    let modalDiv = $(this).data("target");
+    showModal($(this).data("target"));
+}
+
+function showModal(target) {
     $("html").addClass("is-clipped");
-    $(modalDiv).addClass("is-active");
+    $(target).addClass("is-active");
 }
 
 // function indexPageInit() {
@@ -114,7 +146,7 @@ $("#submitBtn").on("click", function () {
   // Console log for testing purposes
   console.log(typed);
   // calls searchFunction from above
-  searchFunction();
+  searchFunction(typed);
   //clears the text from the search bar
   $("#eaten").val("");
   // refreshes load receent searches function
