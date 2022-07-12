@@ -4,6 +4,14 @@ const poisonIndexHolder = $('#poison-index-holder');
 
 // Add on click for the poison sections
 
+function init() {
+    buildPoisonIndex(poisonsList);
+    $('.letter-section').on('click', (event) => {
+        console.debug('clicked');
+        $(event.currentTarget).toggleClass('is-open');
+    });
+}
+
 function buildPoisonIndex(poisonList) {
     let poisonElements = {};
     poisonsList.forEach((poison) => {
@@ -89,8 +97,4 @@ function createEmptyLetterSectionElement() {
     return section.append(letter, list);
 }
 
-buildPoisonIndex(poisonsList);
-$('.letter-section').on('click', (event) => {
-    console.debug('clicked');
-    $(event.currentTarget).toggleClass('is-open');
-});
+init()
