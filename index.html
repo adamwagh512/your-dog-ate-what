@@ -87,10 +87,67 @@
                     <textarea id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
                 </div>
             </div>
+
+
             <!--Submit button  -->
-            <button id="submitBtn" class="button is-large is-fullwidth">Submit</button>
-        </div>
+            <button onclick = "getToxLevel()" id="submitBtn" class="button is-large is-fullwidth">Submit</button>
+            <p id="demo"></p>
+            
+            
+            <div id="demo" class="hidden">
+              
+
+              <div id = "no-hazard-modal" class = "modal">
+                <div class = "modal-background">
+                </div>
+                <div class = "modal-content">
+                    <div class="bulma-overlay-mixin-parent">
+                        <div class="notification is-success">
+                            <div class="is-size-2 has-text-centered">
+                                <div class="">
+                                Phew! Your search is not toxic to dogs!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="columns">
+                            <div class="column is-half">
+                                <figure class="image is-256x128">
+                                    <img class="is-rounded" src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="message-body">
+                            <article class="message is-primary">
+                                <div class="is-size-4">
+                                    The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions or concerns.
+                                    <!-- <br><br><br><br><br><br> -->
+                                    <div class="is-size-2 has-text-centered">
+                                        Toxicity Level
+                                        <progress class="progress is-primary" value="1" max="100">100%</progress>
+                                    </div>
+                                    <div class="has-text-left is-size-4">  
+                                        low
+                                        <!-- <br><br><br><br><br><br> -->
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <button class="my-modal-close">CLOSE ME</button>
+                </div>
+            </div>
+
+    
+              <object></object>
+            </div>
+
+
+          </div>
         
+
+
+
+
         <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
        <div id="buttonsContainer" class="column">
             
@@ -193,7 +250,7 @@
             <div class="card">
                 <div class="card-image">
                   <figure class="image is-4by3">
-                    <img src="./assets/images/sierra1.png" alt="Picture of Sierra">
+                    <img src="assets\images\20210819_194937[1484].jpg" alt="Picture of Sierra">
                   </figure>
                 </div>
                 <div class="card-content">
@@ -472,7 +529,7 @@
 
     <div id = "maybe-hazard-modal" class = "modal">
         <div class = "modal-background"></div>
-        <div class = "modal-content">
+        <div class = "modal-content modal-card">
             <div class="content is-larger">
                 <div class="has-text-centered has-background-warning">
                   <h1 class="has-text-black">
@@ -504,5 +561,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- Script tag for my JS -->
     <script src="./assets/js/index.js"></script>
+    <script src=".\assets\js\food_api.js"></script>
+
 </body>
 </html>

@@ -15,21 +15,6 @@ const poisonsList = [
     {"name":"Antihistamines","link":"https://www.petpoisonhelpline.com/poison/antihistamine/","category":"medications","alternateNames":["Benadryl","Caldryl","Dermamycin","Ziradryl","diphenhydramine","DPH"],"toxicityLevel":"4"}
 ];
 
-//generateBtn.addEventListener("click", writeItem);
-
-        // $.ajax({ 
-        //     type: 'GET',
-        //     url: 'https://chompthis.com/api/v2/food/branded/name.php?api_key=6orO8TB9RRot89tK&name=' + userInput,
-        //     dataType: 'json',
-        //     success: function(data) {
-                
-        //         for (i=0; i< data.items.length; i++){
-        //             console.log(data.items[i])
-        //             console.log(data.items[i].ingredients)
-        //         }
-        //     }         
-        // });
-
 let requestURL = 'https://chompthis.com/api/v2/food/branded/name.php?api_key=6orO8TB9RRot89tK&name=' + userInput;
 
 fetch(requestURL)
@@ -96,3 +81,44 @@ function parseIngredientsString(ingredientsString) {
 
     return fullyParsed;
 }
+
+//take eatenInput
+//compare eatenInput against ingredient list
+//function to pull toxicity level of item
+//return modal of corresponding toxicity level
+
+//take eaten input and compare against posion list
+function getToxLevel() {
+    document.getElementById("submitBtn").innerHTML = eatenToxicity();
+   return result;
+}
+
+//get toxicity level
+function eatenToxicity(event){ 
+
+    for(i = 0; i <= createPoisonSet().length; i++){
+
+        if (eatenInput.equals(ingredients[i])){
+            document.getElementById("").innerHTML = determineFoodToxicity();
+            console.log('eatenInputToxicity');
+            return result;
+            
+            
+        } else if (eatenInput != ingredients){
+            //function unknownHazardHandler(event);
+            console.log('unknown');
+            
+        } else {
+            //function unknownHazardHandler(event);
+            console.log('unknown');
+        }
+    }
+    return eatenToxicity;
+}
+
+
+//show modal will go inside eatenToxicity function
+function myFunction() {
+    document.getElementById("demo").innerHTML = eatenToxicity;
+}
+

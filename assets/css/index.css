@@ -1,9 +1,9 @@
 :root {
     --a1: #2C5959;
-    --a2: #B1D95B;
-    --a3: #D98859;
-    --a4: #A65233;
-    --a5: #5D7310;  
+    --a2: #E5D0CC;
+    --a3: #CA2E55;
+    --a4: #D5A021;
+    --a5: #2D82B7;  
 }
 
 *{
@@ -20,6 +20,13 @@ h1 {
     background-color: var(--a5);
 }
 
+head {
+    font-family: 'Oswald', sans-serif;
+    text-align: center;
+    text-shadow:  1px 1px #2C5959 ;
+    background-color: var(--a5);
+    margin-top: 20px;
+}
 
 .panel {
     background-color: var(--a1);
