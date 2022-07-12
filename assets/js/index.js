@@ -48,6 +48,7 @@ function debugInit() {
     $("#no-hazard-button").on('click', showNoHazardHandler);
     $("#maybe-hazard-button").on('click', showMaybeHazardHandler);
     $("#FAQs-button").on('click', FAQsHandler);
+    $("#poison-index-button").on('click', PoisonIndex);
 
     $(".my-modal-close").click(function() {
         $("html").removeClass("is-clipped");
@@ -79,6 +80,13 @@ function showMaybeHazardHandler(event) {
 
 function FAQsHandler(event) {
     console.log("FAQsHandler");
+    let modalDiv = $(this).data("target");
+    $("html").addClass("is-clipped");
+    $(modalDiv).addClass("is-active");
+}
+
+function PoisonIndex(event) {
+    console.log("Poisons");
     let modalDiv = $(this).data("target");
     $("html").addClass("is-clipped");
     $(modalDiv).addClass("is-active");

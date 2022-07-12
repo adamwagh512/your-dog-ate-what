@@ -1,4 +1,4 @@
-ul li:nth-child(odd) {
+.letter-section ul li:nth-child(odd) {
     background-color: lightgrey;
 }
 
@@ -6,7 +6,7 @@ ul li:nth-child(odd) {
     border-bottom-style: solid;
 }
 
-ul {
+.letter-section ul {
     display: none;
     transition: all 0.1s ease-in-out;
 }

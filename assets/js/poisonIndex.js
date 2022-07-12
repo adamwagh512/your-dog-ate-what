@@ -5,6 +5,7 @@ const poisonIndexHolder = $('#poison-index-holder');
 // Add on click for the poison sections
 
 function init() {
+    console.debug('Initializing Poison Index');
     buildPoisonIndex(poisonsList);
     $('.letter-section').on('click', (event) => {
         console.debug('clicked');
@@ -36,6 +37,8 @@ function buildPoisonIndex(poisonList) {
         $(letterSection).children('ul').append(poisons);
         poisonIndexHolder.append(letterSection);
     }
+
+    console.debug(poisonIndexHolder);
 }
 
 function buildPoisonElement(poison) {
