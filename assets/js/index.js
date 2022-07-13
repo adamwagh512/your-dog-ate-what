@@ -213,7 +213,7 @@ function showUnknownHazardHandler(event) {
 }
 
 // Sets buttons display to a default of hide
-$("#buttonsContainer").children().hide();
+$("#buttonsContainer").children('.rs').hide();
 
 debugInit();
 init();

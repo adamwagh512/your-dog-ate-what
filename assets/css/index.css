@@ -18,18 +18,20 @@ body {
 #head {
     font-family: 'Oswald', sans-serif;
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 5rem;
     text-align: center;
     text-shadow:  1px 1px #61a8b5 ;
     background-color: var(--a5);
     margin-top: 20px;
     margin-bottom: 20px;
-    
+    font-family: 'Bangers', cursive;
 }
+
 #hero {
     margin-bottom: 20px;
 
 }
+
 h1 {
     
     font-family: 'Nanum Pen Script', cursive;;
@@ -45,10 +47,18 @@ head {
     margin-top: 20px;
 }
 .textarea {
-
+    border-radius: 9999px;
+    resize: none;
     margin-top: 20px ;
 }
 
+#top-container {
+    height: 100vh;
+}
+
+#recent-searches-label {
+    font-family: 'Oswald', sans-serif;
+}
 
 .panel {
     background-color: var(--a1);
@@ -105,7 +115,7 @@ head {
 
 .button {
     background-color: var(--a3);
-    
+    font-family: 'Oswald', sans-serif;
 }
 
 .rs {
