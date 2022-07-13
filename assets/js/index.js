@@ -73,7 +73,7 @@ function loadRecentSearches() {
   for (var i = 0; i < filteredSearches.length; i++) {
     // A new button is revealed
     var button = $(`#rs${i + 1}`);
-    button.show();
+    $(button.parent()).show();
     // The button displays the search term
     button.text(filteredSearches[i]);
     //on click calls a function defined below, figured we would need it later
@@ -213,7 +213,7 @@ function showUnknownHazardHandler(event) {
 }
 
 // Sets buttons display to a default of hide
-$("#buttonsContainer").children('.rs').hide();
+$("#buttonsContainer").children().hide();
 
 debugInit();
 init();
