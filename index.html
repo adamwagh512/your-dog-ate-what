@@ -134,7 +134,6 @@
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">About Us</p>
-        <button class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <div class="columns">
@@ -311,71 +310,31 @@
           </div>
         </div>
       </section>
+      <button class="my-modal-close" aria-label="close">Close</button>
     </div>
   </div>
 
   <div id="unknown-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content">
-      <div class="content is-larger">
+    <div class="modal-content has-background-white">
+      <div class="content is-larger ">
         <div class="has-text-centered has-background-info">
-          <h1 class="has-text-black">Ruh-oh! .</h1>
+          <h1 class="has-text-black">Ruh-oh!</h1>
         </div>
-      </div>
+      
       <h2 class="has-text-centered has-text-weight-semibold	">We currently don't have your search query in our database!
         Feel free to reach out at yourdogatewhat@gmail.com</h2>
       <figure class="image is- 1by1">
         <img class="is-rounded"
           src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
       </figure>
-    </div>
-  </div>
-
-  <div id="no-hazard-modal" class="modal">
-    <div class="modal-background">
-    </div>
-    <div class="modal-content">
-      <div class="bulma-overlay-mixin-parent">
-        <div class="notification is-success">
-          <div class="is-size-2 has-text-centered">
-            <div class="">
-              Phew! Your search is not toxic to dogs!
-            </div>
-          </div>
-        </div>
-        <div class="columns">
-          <div class="column is-half">
-            <figure class="image is-256x128">
-              <img class="is-rounded"
-                src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
-            </figure>
-          </div>
-        </div>
-        <div class="message-body">
-          <article class="message is-primary">
-            <div class="is-size-4">
-              The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any
-              abnormal behavior and contact your veternarian with questions or concerns.
-              <!-- <br><br><br><br><br><br> -->
-              <div class="is-size-2 has-text-centered">
-                Toxicity Level
-                <progress class="progress is-primary" value="1" max="100">100%</progress>
-              </div>
-              <div class="has-text-left is-size-4">
-                low
-                <!-- <br><br><br><br><br><br> -->
-              </div>
-            </div>
-          </article>
-        </div>
+      <button class="my-modal-close" aria-label="close">Close</button>
       </div>
-      <button class="my-modal-close">CLOSE ME</button>
-    </div>
   </div>
-
+</div>
   <div id="maybe-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content">
+    <div class="modal-content has-background-white">
       <div class="content is-larger">
         <div class="has-text-centered has-background-warning">
           <h1 class="has-text-white	">Caution! Your search is potentially toxic to dogs.</h1>
@@ -432,7 +391,7 @@
 
   <div id="definite-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content">
+    <div class="modal-content has-background-white">
       <div class="content is-larger">
         <div class="has-text-centered has-background-danger">
           <h1 class="has-text-black	"> Your search is toxic to dogs!</h1>
