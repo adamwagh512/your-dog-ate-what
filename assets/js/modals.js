@@ -116,9 +116,10 @@ function buildClinicInfoSection(clinincContainerElement, clinics) {
 // Take in a clinic box html element and fill it with details from the clinic object
 // Append to page if not already
 function populateClinicBoxElement(clinicBoxElement, clinicObject) {
-    $(clinicBoxElement.children('p')[0]).text(`Clinic Name: ${clinicObject.name}`);
+    $(clinicBoxElement.children('p')[0]).text(clinicObject.name).addClass('is-size-5 has-text-weight-medium');
     $(clinicBoxElement.children('p')[1]).text(`Address: ${clinicObject.address}`);
-    $(clinicBoxElement.children('p')[2]).text(`Phone Number: ${clinicObject.phoneNumber}`);
+    let phoneNumberText = `Phone Number: <a href="tel:${clinicObject.phoneNumber}">${clinicObject.phoneNumber}</a>`
+    $(clinicBoxElement.children('p')[2]).html(phoneNumberText);
 }
 
 function createClinicBoxElement() {
