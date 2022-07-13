@@ -63,13 +63,6 @@
           FAQs
         </a>
 
-        <a class="panel-block" href="https://github.com/adamwagh512/your-dog-ate-what" target="_blank">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          Documentation
-        </a>
-
         <a class="panel-block" href="mailto: yourdogatewhat@gmail.com">
           <span class="panel-icon">
             <i class="fas fa-book" aria-hidden="true"></i>
@@ -99,7 +92,7 @@
       <div class="field">
         <div class="control">
           <!-- Giving input the ID of eaten -->
-          <textarea maxlength="25" id="eaten" class="textarea is-small" placeholder="What did your dog eat?"></textarea>
+          <textarea maxlength="25" id="eaten" class="textarea is-large" placeholder="What did your dog eat?"></textarea>
         </div>
       </div>
       <!--Submit button  -->
@@ -127,7 +120,6 @@
   <button id="maybe-hazard-debug-button" data-target="#maybe-hazard-modal">Show Maybe Hazard</button>
   <button id="definite-hazard-debug-button" data-target="#definite-hazard-modal">Show Definite Hazard</button>
   <button id="unknown-hazard-debug-button" data-target="#unknown-hazard-modal">Show Unknown Hazard</button>
-  <button id="Other-Documentation-debug-button" data-target="#Other-Documentation-modal">Other Documentation</button>
 
   <div id="about-us-modal" class="modal">
     <div class="modal-background"></div>
@@ -425,7 +417,7 @@
           src="https://media.istockphoto.com/photos/portrait-of-a-dalmatian-dog-on-a-red-background-picture-id1287164463?k=20&m=1287164463&s=612x612&w=0&h=Q3_hVr-0McDGed7RD25AMByej2wvGvTnxwWSOCiTRQQ=">
       </figure>
       <div>
-        <h3>Closest Veterniary Clinics Open Now</h3>
+        <h3>Closest Veterinary Clinics Open Now</h3>
         <!-- Nearest  Animal  Hospital will display here -->
         <div class="box has-text-centered">
           <p>Clinic Name: </p>
@@ -434,11 +426,16 @@
           <!-- Option #2 (2nd nearest)  -->
         </div>
         <div class="box has-text-centered ">
-          Vet option #2
+          <p>Clinic Name:</p>
+          <p>Address:</p>
+          <p>Phone Number:</p>
+
         </div>
         <!-- Either 3rd nearest or potentially the nearest "24 hour animal hospital" -->
         <div class="box has-text-centered ">
-          Vet option #3
+          <p>Clinic Name:</p>
+          <p>Address:</p>
+          <p>Phone Number:</p>
         </div>
 
         <div class="box has-text-centered">
@@ -454,9 +451,7 @@
               var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
             }
           </script>
-
-          <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU&callback=myMap"></script>
+  
         </div>
         <button class="my-modal-close">Close</button>
       </div>
