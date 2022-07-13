@@ -1,7 +1,13 @@
 import { determineInputToxicity } from './food_api.js'
+import { clinicsApiCall } from './modals.js'
 
 //Creates an empty JavaScript Array
 var recentSearches = [];
+
+const NO_HAZARD_ID = 'no-hazard-modal';
+const MAYBE_HAZARD_ID = 'maybe-hazard-modal';
+const SEVERE_HAZARD_ID = 'definite-hazard-modal';
+const UNKNOWN_HAZARD_ID = 'unknown-hazard-modal';
 
 //This function loads recent searches from local storage when page is loaded
 function loadRecentSearches() {
@@ -39,24 +45,36 @@ function searchFunction(userInput) {
     //Converts recentSearches array into something that can be stored in local storage.
     localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
 
+    let modalTarget;
+    let clinicContainer;
     switch(toxicity) {
       case 1:
         // Mild
-        showModal('#no-hazard-modal');
+        modalTarget = '#'+NO_HAZARD_ID;
+        showModal(modalTarget);
         break;
       case 2:
       case 3:
         // Moderate
-        showModal('#maybe-hazard-modal');
+        modalTarget = '#'+MAYBE_HAZARD_ID;
+        clinicContainer = $(modalTarget).find('.clinic-info-container');
+        showModal(modalTarget);
+        clinicsApiCall(clinicContainer);
         break;
       case 4:
       case 5:
-        // Severed
-        showModal('#definite-hazard-modal');
+        // Severe
+        modalTarget = '#'+SEVERE_HAZARD_ID;
+        clinicContainer = $(modalTarget).find('.clinic-info-container');
+        showModal(modalTarget);
+        clinicsApiCall(clinicContainer);
         break;
       default:
         // Unknown
-        showModal('#who-knows-modal');
+        modalTarget = '#'+UNKNOWN_HAZARD_ID;
+        clinicContainer = $(modalTarget).find('.clinic-info-container');
+        showModal(modalTarget);
+        clinicsApiCall(clinicContainer);
         break;
     }
   });
@@ -77,13 +95,13 @@ function indexPageInit() {
 }
 
 function debugInit() {
-    $("#no-hazard-debug-button").on('click', showModalHandler);
-    $("#maybe-hazard-debug-button").on('click', showModalHandler);
+    $("#no-hazard-debug-button").on('click', showNoHazardHandler);
+    $("#maybe-hazard-debug-button").on('click', showMaybeHazardHandler);
     $("#faqs-debug-button").on('click', showModalHandler);
     $("#poison-index-debug-button").on('click', showModalHandler);
     $("#about-us-debug-button").on('click', showModalHandler);
-    $("#definite-hazard-debug-button").on('click', showModalHandler);
-    $("#unknown-hazard-debug-button").on('click', showModalHandler);
+    $("#definite-hazard-debug-button").on('click', showSevereHazardHandler);
+    $("#unknown-hazard-debug-button").on('click', showUnknownHazardHandler);
 
     $(".my-modal-close").click(function() {
         $("html").removeClass("is-clipped");
@@ -108,30 +126,31 @@ function showModal(target) {
     $(target).addClass("is-active");
 }
 
-// function indexPageInit() {
-//     $("#submitBtn").on('click', submitEatenHandler);
-// }
+function showNoHazardHandler(event) {
+  let target = '#'+NO_HAZARD_ID;
+  showModal(target);
+}
 
+function showMaybeHazardHandler(event) {
+  let target = '#'+MAYBE_HAZARD_ID;
+  let clinicContainer = $(target).find('.clinic-info-container');
+  showModal(target);
+  clinicsApiCall(clinicContainer);
+}
 
+function showSevereHazardHandler(event) {
+  let target = '#'+SEVERE_HAZARD_ID;
+  let clinicContainer = $(target).find('.clinic-info-container');
+  showModal(target);
+  clinicsApiCall(clinicContainer);
+}
 
-    // $(".my-modal-close").click(function() {
-    //     $("html").removeClass("is-clipped");
-    //     $(this).parents('.modal').removeClass("is-active");
-    //  });
-
-
-
-
-// $(".modal-button").click(function() {
-//     var target = $(this).data("target");
-//     $("html").addClass("is-clipped");
-//     $(target).addClass("is-active");
-//  });
- 
-//  $(".my-modal-close").click(function() {
-//     $("html").removeClass("is-clipped");
-//     $(this).parents('.modal').removeClass("is-active");
-//  });
+function showUnknownHazardHandler(event) {
+  let target = '#'+UNKNOWN_HAZARD_ID;
+  let clinicContainer = $(target).find('.clinic-info-container');
+  showModal(target);
+  clinicsApiCall(clinicContainer);
+}
 
 debugInit()
 indexPageInit()

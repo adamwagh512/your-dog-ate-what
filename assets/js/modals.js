@@ -1,4 +1,5 @@
 
+export { clinicsApiCall };
 // https://maps.googleapis.com/maps/api/place/textsearch/json?query=Animalhospital&key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU
 
 // // Set up function for searching maps for "vet", "veterinarian", "animal hospital" , "24 hours animal hospital"
@@ -33,7 +34,7 @@ function buildRequestUrl(baseUrl, queryParams) {
     return finalUrl;
 }
 
-function baseApiCall() {
+function clinicsApiCall(clinincContainerElement) {
     console.debug("Hey");
     let apiUrl = BASE_TEXT_API_URL;
     let params = {
@@ -42,14 +43,11 @@ function baseApiCall() {
         openNow: true
     }
     let requestUrl = buildRequestUrl(apiUrl, params);
-    let headers = new Headers({
-        'Access-Control-Allow-Origin': '*'
-    })
     fetch(requestUrl, {
         mode: 'cors'
     })
     .then(res => res.json())
-    .then(data => buildClinicInfoSection(data.results))
+    .then(data => buildClinicInfoSection(clinincContainerElement, data.results))
 }
 
 function populateModal(data) {
@@ -57,9 +55,7 @@ function populateModal(data) {
 }
 
 // Rename myFunction at some point
-function buildClinicInfoSection(clinics) {
-
-    let infoContainer = $('#'+CLINIC_INFO_CONTAINER_ID);
+function buildClinicInfoSection(clinincContainerElement, clinics) {
     for (var i = 0; i < CLINIC_NUMBER; i++) {
         let clinic = clinics[i];
         console.debug(clinic);
@@ -77,7 +73,7 @@ function buildClinicInfoSection(clinics) {
             populateClinicBoxElement(clinicBoxElement, clinicObject);
             console.debug(clinicBoxElement);
 
-            infoContainer.append(clinicBoxElement);
+            clinincContainerElement.append(clinicBoxElement);
         });
     }
 }
@@ -113,7 +109,6 @@ function requestClinicDetails(clinicId) {
     });
 }
 
-baseApiCall();
 // googleMapsTests();
 
 // function googleMapsTests() {
