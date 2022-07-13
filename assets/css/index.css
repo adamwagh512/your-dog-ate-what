@@ -4,6 +4,7 @@
     --a3: #CA2E55;
     --a4: #D5A021;
     --a5: #E5D0CC;  
+    --a6: #EDEDED;
 }
 
 *{
@@ -58,6 +59,43 @@ head {
 .panel-block {
     color: white;
     font-family: 'Bangers', cursive;
+}
+
+.brand-logo {
+    font-family: 'Bangers', cursive;
+    background-color: #ededed;
+    color: #363636;
+    font-size: 2.1rem;
+}
+
+.my-navbar {
+    background-color: var(--a1);
+}
+
+.my-navbar-button {
+    color: var(--a6);
+    font-size: 1.5rem;
+    font-family: 'Bangers', cursive;
+    transition: all 0.2s ease-in-out;
+}
+
+.my-navbar-button:hover {
+    cursor: pointer;
+    background-color: var(--a6);
+    color: var(--a1);
+    transition: all 0.2s ease-in-out;
+}
+
+.my-navbar-burger {
+    height: auto;
+}
+
+.navbar-menu {
+    background-color: var(--a1);
+}
+
+.navbar-menu p, a {
+    text-align: center;
 }
 
 #dog {

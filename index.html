@@ -24,53 +24,43 @@
 </head>
 
 <body>
+  <nav class="navbar my-navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand brand-logo">
+      <p class="navbar-item">
+        <img src="./assets/images/logo4.jpg">
+        Your Dog Ate What?
+      </p>
+  
+      <a role="button" class="navbar-burger my-navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar-menu" class="navbar-menu">
+      <div class="navbar-end">
+        <p class="navbar-item my-navbar-button" id="about-us-button" data-target="#about-us-modal">
+          About Us
+        </p>
+        <p class="navbar-item my-navbar-button" id="poison-index-button" data-target="#poison-index-modal">
+          Poison Index
+        </p>
+        <p class="navbar-item my-navbar-button" id="faqs-button" data-target="#faqs-modal">
+          FAQ
+        </p>
+        <a class="navbar-item my-navbar-button" href="mailto: yourdogatewhat@gmail.com">
+          Contact Us
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
   <!-- Columns is how Bulma organizes stuff -->
   <div class="columns">
     <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
     <div id="menu" class="column is-fullwidth">
-      <article class="panel">
-        <p class="panel-heading">
-          <img id="logo" src="./assets/images/logo4.jpg" alt="">
-          Your Dog Ate What?
-        </p>
-
-        <div class="panel-block">
-          <p class="control has-icons-left">
-            <span class="icon is-left">
-              <i class="fas fa-search" aria-hidden="true"></i>
-            </span>
-          </p>
-        </div>
-
-        <a class="panel-block" id="about-us-button" data-target="#about-us-modal">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          About Us
-        </a>
-
-        <a class="panel-block" id="poison-index-button" data-target="#poison-index-modal">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          Poison Index
-        </a>
-
-        <a class="panel-block" id="faqs-button" data-target="#faqs-modal">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          FAQs
-        </a>
-
-        <a class="panel-block" href="mailto: yourdogatewhat@gmail.com">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          Contact Us
-        </a>
-
-      </article>
 
     </div>
 
