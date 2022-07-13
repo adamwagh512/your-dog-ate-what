@@ -529,140 +529,100 @@
 
   <div id="faqs-modal" class="modal">
     <div class="modal-background">
-    </div>
-    <div class="modal-content">
-      <div class="bulma-stuff">
+      </div>
+        <div class="modal-content">
+            <div class="bulma-stuff">
         <!-- referencing the tutorial video for bulma stuff https://www.youtube.com/watch?v=IiPQYQT2-wg <div class="content"> is addind bottom padding-->
-            <div class="box has-text-centered">
-                <div class="container">
-                    <div class="is-size-2 has-text-centered">
-                        <div class="">
-                        FAQs
+                <div class="box has-text-centered">
+                    <div class="container">
+                        <div class="is-size-2 has-text-centered">
+                            <div class="">
+                            FAQs
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-                <div class="content"> </div>
-                <div class="content"> </div>
-        <!-- <div class="columns">
-          <div class="column is-half">
-            <figure class="image is-256x128">
-
+                    <div class="content"> </div>
+                    <div class="content"> </div>
+   
+                            
                 <div class="box has-text-centered">
-                        <div class="container">  
-                          
-                                <div class="is-size-2 has-text-centered">
-                                    </div>
-                    
-                                <div class="box has-text-centered">
-                                    <h3 class="title is-3">Who we are ? </h3>
-                            insert response  -->
-                    
-                            
-                        <div class="box has-text-centered">
-                        <div class="container">  
-                            
-                            <div class="is-size-2 has-text-centered">
-                                </div>
-                
-                            <div class="box has-text-centered">
+                    <div class="container">  
+                        <div class="is-size-2 has-text-centered">
+                        
+        
+                            <div class="box is-size-6">
                                 <h3 class="title is-3">Who we are ? </h3>
-                                
                                 <div id="marian1">
-                                    We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a better place for dogs!
+                                      We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a better place for dogs!
                                 </div>
 
                                 <button onclick="myFunction1()">Response</button>
+                                  <script>
+                                      document.getElementById("marian1").style.display = "none";
+                  
+                                      function myFunction1() {
+                                      var x = document.getElementById("marian1");
+                  
+                                      if (x.style.display === "none") {
+                                          x.style.display = "block";
+                                      } else {
+                                          x.style.display = "none";
+                                      }
+                                      }
+                                  </script>
+                            </div>
+                
+                            <div class="message box is-primary">
+                            
+                                <h3 class="title is-3">Why did we build this web site? </h3>
+                                <div id="marian2">
+                                    Make the world a better place for dogs! People around the world love their pets, included them as a beloved member of the family, this web site is ment to give valuable information to the pet owners about dog health protection tool
+                                </div>
 
+                                <button onclick="myFunction2()">Response</button>
+                                  <script>
+                                      document.getElementById("marian2").style.display = "none";
+
+                                      function myFunction2() {
+                                      var x = document.getElementById("marian2");
+
+                                      if (x.style.display === "none") {
+                                          x.style.display = "block";
+                                      } else {
+                                          x.style.display = "none";
+                                      }
+                                      }
+                                  </script>
+                            </div>
+                                      
+                            <div class="box is-size-6">
+                                <h3 class="title is-3">How do I use this site </h3>
+                                  <div id="marian4">
+                                    <p> Type what your dog ate into the search bar and click the Submit button below the search bar.
+                                        Your results will pop up in a modal window. If a vet visit is recommended we will provide you with options for the nearest open vet offices.
+                                    </p>
+                                  </div>
+
+                                <button onclick="myFunction4()">Response</button>
                                 <script>
-                                    document.getElementById("marian1").style.display = "none";
-                
-                                    function myFunction1() {
-                                    var x = document.getElementById("marian1");
-                
+                                    document.getElementById("marian4").style.display = "none";
+
+                                    function myFunction4() {
+                                    var x = document.getElementById("marian4");
+
                                     if (x.style.display === "none") {
                                         x.style.display = "block";
                                     } else {
                                         x.style.display = "none";
                                     }
                                     }
-                
                                 </script>
                             </div>
-                        <!-- </div>
-                    </div>
-                </div>      -->
-                        
-                            <!-- <div class="box has-text-centered"> -->
-                                        
-                    <div class="message is-primary">
-                    
-                        <h3 class="title is-3">why did we build this web site? </h3>
-
-
-                
-                        <div id="marian2">
-                            Make the world a better place for dogs! People around the world love their pets, included them as a beloved member of the family, this web site is ment to give valuable information to the pet owners about dog health protection tool
-                        </div>
-
-                        <button onclick="myFunction2()">Response</button>
-
-                        <script>
-                        document.getElementById("marian2").style.display = "none";
-
-                        function myFunction2() {
-                        var x = document.getElementById("marian2");
-
-                        if (x.style.display === "none") {
-                            x.style.display = "block";
-                        } else {
-                            x.style.display = "none";
-                        }
-                        }
-
-                        </script>
-                    </div>
-                            
-
-                <!-- insert next question  -->
-
-                                    <div class="box has-text-centered">
-                                        <h3 class="title is-3">How do I use this site </h3>
-                                    <!-- insert response  -->
-                                        
-                                    
-                                        <div id="marian4">
-                                            <p> Type what your dog ate into the search bar and click the Submit button below the search bar.
-                                                Your results will pop up in a modal window. If a vet visit is recommended we will provide you with options for the nearest open vet offices.
-                                            </p>
-                                        
-                                            <!-- <p>Go to the paragraph named "How To Use the Search Bar" on README.md file by clickin on </p> 
-                                                <div><a href="https://github.com/adamwagh512/your-dog-ate-what/blob/main/README.md">README.md!</a></div>   -->
-                                                
-
-                                        </div>
-
-                                        <button onclick="myFunction4()">Response</button>
-
-                                        <script>
-                                            document.getElementById("marian4").style.display = "none";
-
-                                            function myFunction4() {
-                                            var x = document.getElementById("marian4");
-
-                                            if (x.style.display === "none") {
-                                                x.style.display = "block";
-                                            } else {
-                                                x.style.display = "none";
-                                            }
-                                            }
-
-                                        </script>
-                                    </div>
 
 
 
-                                <div class="message is-primary">
+                                <div class="message box is-primary">
 
                                     <h3 class="title is-3">How did we build the site? </h3>
                                     <!-- insert response  -->
@@ -670,18 +630,20 @@
                                     <!-- https://github.com/adamwagh512/your-dog-ate-what -->
 
 
-                                    <div id="marian3">
+                                    <div id="marian5">
                                     Wisist the Github site: https://github.com/adamwagh512/your-dog-ate-what
+                                    <div><a href="https://github.com/adamwagh512/your-dog-ate-what">Github Link!</a></div>   -->
+                                                
                                     </div>
 
-                                    <button onclick="myFunction3()">Response</button>
+                                    <button onclick="myFunction5()">Response</button>
 
                                     <script>
-                                    document.getElementById("marian3").style.display = "none";
+                                    document.getElementById("marian5").style.display = "none";
 
-                                    function myFunction3() {
+                                    function myFunction5() {
                                     // document.getElementById("marian1").style.display = "none";
-                                    var x = document.getElementById("marian3");
+                                    var x = document.getElementById("marian5");
 
                                     if (x.style.display === "none") {
                                     x.style.display = "block";
@@ -735,13 +697,14 @@
             <button class="my-modal-close">CLOSE ME</button>
 
         </div>
-    </div>>
+    </div>
 
   <div class="columns">
     <div class="column is has-text-centered">
       <span>Check us out on </span><a href="https://github.com/adamwagh512/your-dog-ate-what">Github</a>
     </div>
   </div>
+
   <!-- Jquery Script tag -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Script tag for my JS -->
