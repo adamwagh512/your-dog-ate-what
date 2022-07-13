@@ -7,44 +7,62 @@ The information, including but not limited to, text, graphics, images and other 
 ## Product Description
 Welcome to Your Dog Ate What?. This app will help you determine if something that your dog has eaten could be potentially hazardous. We will help you determine the risk level to your dog based on the ingrediants in the ingested food. If the ingested food poses a risk to your dog we will help you find the nearest open veterinarian office based on your location. 
 ## How to Use This Project
-     Navigate to https://adamwagh512.github.io/your-dog-ate-what/
+Navigate to https://adamwagh512.github.io/your-dog-ate-what/
 ### How to Use the Menu
-     On the left side of the screen, you will find our navigation menu. 
+On the left side of the screen, you will find our navigation menu. 
      
-     Click on the About Us tab to learn about the team that built this app.
+Click on the About Us tab to learn about the team that built this app.
 
-     Click on the Poison Index to access our poison index. (Might need its own 
-     section below)
+Click on the Poison Index to access our poison index. Please refer to our poison index documentation below for more information about how to use this feature
 
-    (Cant remember where we landed on documentation)
+Click on the Contact Us tab to send us an email
 
-     Click on the Contact Us tab to send us an email
-
-     Click on the FAQs tab to access our frequently asked questions modal 
+Click on the FAQs tab to access our frequently asked questions modal 
 ![Alt text](./assets/images/landing-page-menu.jpg)
+### How to use the Poison Index
+1) Navigate to the poison index as described above and click on the link
+
+2) This should generate an alphabetized list of known dog toxins. 
+
+3) Search for the toxin that you are concerned about
+
+4) If the toxin is in our database, you will see a threat 
+level listed beside it as seen below.
+
+5) If you do not see the toxin you are concerned about please contact your vet first, and then send us an email at yourpetatewhat@gmail.com so we research the toxin and add it to our database if needed.
+![Alt text](./assets/images/poisonIndex.jpg)
 ### How To Use the Search Bar
-    1) Type what your dog ate into the search bar and click the Submit button below the search bar
+1) Type what your dog ate into the search bar and click the Submit button below the search bar
  ![Alt text](./assets/images/searchbar.jpg)
 
-    2) Your results will pop up in a modal as seen below. If a vet visit is recommended we will provide you with options for the nearest open vet offices.
-![Alt text](./assets/images/modal.jpg)
+2) Your results will pop up in a modal as seen below. If a vet visit is recommended we will provide you with options for the nearest open vet offices.
+
+    ![Alt text](./assets/images/modal.jpg)
     
-    3) You can either click one of the links to the vet offices or click the close button to return to the landing page. 
+3) You can either click one of the links to the vet offices or click the close button to return to the landing page. 
 ## Credits
 ### Technologies Used 
-    1) HTML
-    2) Javascript
-    3) CSS
-    4) Bulma was used for styling this page (https://bulma.io/)
+1) HTML
+2) Javascript
+3) CSS
+4) Bulma was used for styling this page https://bulma.io/
 ### APIs Used
-    1) 
+1) Chomp Food Data API- Ingrediants List
+2) Google Maps - Javascript API
+
+### Animal Toxin Data 
+Animal toxin data was pulled from https://www.petpoisonhelpline.com/poisons/
 
 ## Contributers
-    Kurt Bixby - Github: kurtbixby
-    Marian Croitoru - Github: marianfediuc
-    Sierra Nutt - Github: SierraNN
-    Adam Wagh - Github: adamwagh512
-    Callie Williams - Github: calliebwill
+Kurt Bixby - Github: kurtbixby
+    
+Marian Croitoru - Github: marianfediuc
+
+Sierra Nutt - Github: SierraNN
+
+Adam Wagh - Github: adamwagh512
+
+Callie Williams - Github: calliebwill
 
 ## Licences 
 MIT License
