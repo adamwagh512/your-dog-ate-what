@@ -7,9 +7,11 @@ const poisonIndexHolder = $('#poison-index-holder');
 function init() {
     console.debug('Initializing Poison Index');
     buildPoisonIndex(poisonsList);
-    $('.letter-section').on('click', (event) => {
+    $('.letter-section h2').on('click', (event) => {
         console.debug('clicked');
-        $(event.currentTarget).toggleClass('is-open');
+        console.debug($(event.currentTarget).parent());
+        $(event.currentTarget).parent().toggleClass('is-open');
+        
     });
 }
 

@@ -1,4 +1,4 @@
-export { clinicsApiCall };
+export { clinicsApiCall, initModals };
 // https://maps.googleapis.com/maps/api/place/textsearch/json?query=Animalhospital&key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU
 
 // // Set up function for searching maps for "vet", "veterinarian", "animal hospital" , "24 hours animal hospital"
@@ -14,6 +14,42 @@ const CLINIC_INFO_CONTAINER_ID = 'clinic-info-container'
 
 const MAP_HTML_ID = 'clinicsMap';
 const MAPS_QUERY = 'animal hospital';
+
+// Modals code copied from the Bulma documentation
+function initModals() {
+    document.addEventListener('DOMContentLoaded', () => {
+        function openModal($el) {
+            $el.classList.add('is-active');
+        }
+        
+        function closeModal($el) {
+            $el.classList.remove('is-active');
+        }
+        
+        function closeAllModals() {
+        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+            closeModal($modal);
+        });
+        }
+        
+        (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+            const $target = $close.closest('.modal');
+        
+            $close.addEventListener('click', () => {
+              closeModal($target);
+            });
+        });
+
+        // Add a keyboard event to close all modals
+        document.addEventListener('keydown', (event) => {
+            const e = event || window.event;
+        
+            if (e.keyCode === 27) { // Escape key
+              closeAllModals();
+            }
+        });
+    })
+}
 
 function buildRequestUrl(baseUrl, queryParams) {
     if (Object.keys(queryParams).length < 1) {

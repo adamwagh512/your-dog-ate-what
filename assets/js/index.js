@@ -1,5 +1,5 @@
 import { determineInputToxicity } from './food_api.js'
-import { clinicsApiCall } from './modals.js'
+import { clinicsApiCall, initModals } from './modals.js'
 import { populateAboutUsSection } from './aboutUs.js'
 
 //Creates an empty JavaScript Array
@@ -23,6 +23,13 @@ function init() {
   $('#about-us-button').on('click', showModalHandler);
   $('#poison-index-button').on('click', showModalHandler);
   $('#faqs-button').on('click', showModalHandler);
+  
+  $(".my-modal-close").click(function() {
+    $("html").removeClass("is-clipped");
+    $(this).parents('.modal').removeClass("is-active");
+  });
+
+  initModals();
 
   $('.'+RECENT_BUTTON_CLASS).on('click', recentSearchButtonHandler);
   populateAboutUsSection($('#'+TEAM_CONTAINER_ID));
@@ -38,10 +45,6 @@ function debugInit() {
   $("#definite-hazard-debug-button").on('click', showSevereHazardHandler);
   $("#unknown-hazard-debug-button").on('click', showUnknownHazardHandler);
 
-  $(".my-modal-close").click(function() {
-      $("html").removeClass("is-clipped");
-      $(this).parents('.modal').removeClass("is-active");
-   });
 }
 
 //This function loads recent searches from local storage when page is loaded
