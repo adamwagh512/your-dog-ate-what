@@ -96,7 +96,7 @@ function buildLetterSectionElement(letter) {
 function createEmptyLetterSectionElement() {
     // Add classes and the like to these
     let section = $('<section>').addClass('has-text-centered letter-section');
-    let letter = $('<h2>').addClass('title is-6');
+    let letter = $('<h2>').addClass('title is-size-6');
     let list = $('<ul>');
 
     return section.append(letter, list);

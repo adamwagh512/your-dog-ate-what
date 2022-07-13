@@ -9,7 +9,7 @@ Welcome to Your Dog Ate What?. This app will help you determine if something tha
 ## How to Use This Project
 Navigate to https://adamwagh512.github.io/your-dog-ate-what/
 ### How to Use the Menu
-On the left side of the screen, you will find our navigation menu. 
+On the top of the screen, you will find our navigation menu. 
      
 Click on the About Us tab to learn about the team that built this app.
 
@@ -23,11 +23,11 @@ Click on the FAQs tab to access our frequently asked questions modal
 ### How to use the Poison Index
 1) Navigate to the poison index as described above and click on the link
 
-2) This should generate an alphabetized list of known dog toxins. 
+2) This contains an alphabetized list of known dog toxins. 
 
-3) Search for the toxin that you are concerned about
+3) Search for the toxin that you are concerned about.
 
-4) If the toxin is in our database, you will see a threat 
+4) If the toxin is in our database, you will see a threat
 level listed beside it as seen below.
 
 5) If you do not see the toxin you are concerned about please contact your vet first, and then send us an email at yourpetatewhat@gmail.com so we research the toxin and add it to our database if needed.

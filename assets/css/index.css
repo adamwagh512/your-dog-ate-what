@@ -4,6 +4,7 @@
     --a3: #CA2E55;
     --a4: #D5A021;
     --a5: #E5D0CC;  
+    --a6: #EDEDED;
 }
 
 *{
@@ -17,18 +18,20 @@ body {
 #head {
     font-family: 'Oswald', sans-serif;
     font-weight: bolder;
-    font-size: xx-large;
+    font-size: 5rem;
     text-align: center;
     text-shadow:  1px 1px #61a8b5 ;
     background-color: var(--a5);
     margin-top: 20px;
     margin-bottom: 20px;
-    
+    font-family: 'Bangers', cursive;
 }
+
 #hero {
     margin-bottom: 20px;
 
 }
+
 h1 {
     
     font-family: 'Nanum Pen Script', cursive;;
@@ -44,10 +47,19 @@ head {
     margin-top: 20px;
 }
 .textarea {
-
+    border-radius: 9999px;
+    resize: none;
     margin-top: 20px ;
 }
 
+#top-container {
+    height: 100vh;
+}
+
+#recent-searches-label {
+    font-family: 'Oswald', sans-serif;
+    margin: .8rem;
+}
 
 .panel {
     background-color: var(--a1);
@@ -60,20 +72,63 @@ head {
     font-family: 'Bangers', cursive;
 }
 
+.brand-logo {
+    font-family: 'Bangers', cursive;
+    background-color: #ededed;
+    color: #363636;
+    font-size: 2.1rem;
+}
+
+.my-navbar {
+    background-color: var(--a1);
+}
+
+.my-navbar-button {
+    color: var(--a6);
+    font-size: 1.5rem;
+    font-family: 'Bangers', cursive;
+    transition: all 0.2s ease-in-out;
+}
+
+.my-navbar-button:hover {
+    cursor: pointer;
+    background-color: var(--a6);
+    color: var(--a1);
+    transition: all 0.2s ease-in-out;
+}
+
+.my-navbar-burger {
+    height: auto;
+}
+
+.navbar-menu {
+    background-color: var(--a1);
+}
+
+.navbar-menu p, a {
+    text-align: center;
+}
+
 #dog {
     max-width: 50vw;
 }
 
+#page-footer {
+    margin-bottom: 0 !important;
+}
+
+.text-input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
 
 .button {
     background-color: var(--a3);
-    
+    font-family: 'Oswald', sans-serif;
 }
 
 .rs {
-    margin-top: 30px;
     background-color: var(--a2);
-   
 } 
 
 #logo {

@@ -24,60 +24,47 @@
 </head>
 
 <body>
-  <!-- Columns is how Bulma organizes stuff -->
-  <div class="columns">
-    <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
-    <div id="menu" class="column is-fullwidth">
-      <article class="panel">
-        <p class="panel-heading">
-          <img id="logo" src="./assets/images/logo4.jpg" alt="">
-          Your Dog Ate What?
-        </p>
-
-        <div class="panel-block">
-          <p class="control has-icons-left">
-            <span class="icon is-left">
-              <i class="fas fa-search" aria-hidden="true"></i>
-            </span>
-          </p>
-        </div>
-
-        <a class="panel-block" id="about-us-button" data-target="#about-us-modal">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
+  <nav class="navbar my-navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand brand-logo">
+      <p class="navbar-item">
+        <img src="./assets/images/logo4.jpg">
+        YDAW?!
+      </p>
+  
+      <a role="button" class="navbar-burger my-navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="navbar-menu" class="navbar-menu">
+      <div class="navbar-end">
+        <p class="navbar-item my-navbar-button" id="about-us-button" data-target="#about-us-modal">
           About Us
-        </a>
-
-        <a class="panel-block" id="poison-index-button" data-target="#poison-index-modal">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
+        </p>
+        <p class="navbar-item my-navbar-button" id="poison-index-button" data-target="#poison-index-modal">
           Poison Index
-        </a>
-
-        <a class="panel-block" id="faqs-button" data-target="#faqs-modal">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
-          FAQs
-        </a>
-
-        <a class="panel-block" href="mailto: yourdogatewhat@gmail.com">
-          <span class="panel-icon">
-            <i class="fas fa-book" aria-hidden="true"></i>
-          </span>
+        </p>
+        <p class="navbar-item my-navbar-button" id="faqs-button" data-target="#faqs-modal">
+          FAQ
+        </p>
+        <a class="navbar-item my-navbar-button" href="mailto: yourdogatewhat@gmail.com">
           Contact Us
         </a>
-
-      </article>
-
+      </div>
     </div>
+  </nav>
 
-    <div class="column">
+  <div id="top-container" class="container is-max-desktop">
+  <!-- Columns is how Bulma organizes stuff -->
+  <div class="columns mx-1">
+    <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
+
+    <div class="column is-full">
 
       <div class="container is-max-desktop">
-        <div id="head" class="notification">
+        <div id="head" class="notification is-size-2-mobile">
           Your Dog Ate What?!
         </div>
       </div>
@@ -89,32 +76,42 @@
         </div>
       </div>
 
-      <div class="field">
-        <div class="control">
+      <div class="field has-addons text-input">
+        <div class="control is-expanded">
           <!-- Giving input the ID of eaten -->
-          <textarea maxlength="25" id="eaten" class="textarea is-large" placeholder="What did your dog eat?"></textarea>
+          <input type="text" maxlength="25" id="eaten" class="input is-large" placeholder="What did your dog eat?"></textarea>
+        </div>
+        <div class="control">
+          <button id="submitBtn" class="button is-large">Submit</button>
         </div>
       </div>
       <!--Submit button  -->
-      <button id="submitBtn" class="button is-large is-fullwidth">Submit</button>
+      <!-- <button id="submitBtn" class="button is-large is-fullwidth">Submit</button> -->
     </div>
-
-    <div id="buttonsContainer" class="column">
-
-      <!-- Id tags used to hide buttons when not in use, class used for formating with bulma -->
-      <button id="rs1" class="button is-large is-fullwidth rs"></button>
-
-      <button id="rs2" class="button is-large is-fullwidth rs"></button>
-
-      <button id="rs3" class="button is-large is-fullwidth rs"></button>
-
-      <button id="rs4" class="button is-large is-fullwidth rs"></button>
-
-    </div>
-
-    <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
+    
 
   </div>
+
+    <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
+  <div id="recent-searches-area">
+    <h2 id="recent-searches-label" class="has-text-centered is-size-2">Recent Searches</h2>
+    <div id="buttonsContainer" class="columns is-centered mx-1">
+      <div class="column">
+        <button id="rs1" class="button is-large is-fullwidth rs"></button>
+      </div>
+      <div class="column">
+            <button id="rs2" class="button is-large is-fullwidth rs"></button>
+      </div>
+      <div class="column">
+        <button id="rs3" class="button is-large is-fullwidth rs"></button>
+      </div>
+      <div class="column">
+        <button id="rs4" class="button is-large is-fullwidth rs"></button>
+      </div>
+    </div>
+  </div>
+  
+</div>
 
   <div id="about-us-modal" class="modal">
     <div class="modal-background"></div>
@@ -299,20 +296,19 @@
 
   <div id="unknown-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content has-background-white">
+    <div class="modal-content has-background-white p-3">
       <div class="content is-larger ">
         <div class="has-text-centered has-background-info">
           <h1 class="has-text-black">Ruh-oh!</h1>
         </div>
 
-        <h2 class="has-text-centered has-text-weight-semibold	">We currently don't have your search query in our
-          database!
-          Feel free to reach out at yourdogatewhat@gmail.com</h2>
-        <figure class="image is- 1by1">
+        <h2 class="has-text-centered has-text-weight-semibold	">We don't know whether your substance is toxic!
+          Feel free to reach out at <a href="mailto:yourdogatewhat@gmail.com">yourdogatewhat@gmail.com</a>, so we can add it.</h2>
+        <figure class="image is-3by2">
           <img class="is-rounded"
             src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
         </figure>
-        <div class="clinic-info-container">
+        <div class="clinic-info-container has-text-centered">
           <h3>Closest Veterniary Clinics Open Now</h3>
           <!-- Nearest  Animal  Hospital will display here -->
         </div>
@@ -322,25 +318,25 @@
 
   <div id="no-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content has-background-white">
+    <div class="modal-content has-background-white p-3">
       <div class="content is-larger">
         <div class="has-text-centered has-background-info">
           <h1 class="has-text-black">PHEW! <br>Your search is not toxic to dogs!</h1>
         </div>
+        <h2 class="has-text-centered has-text-weight-semibold ">The food your dog ate is not considered hazardous to dogs!
+          Please keep a close eye on your pal for any
+          abnormal behavior and contact your veternarian with questions or concerns.</h2>
+        <figure class="image is- 1by1">
+          <img class="is-rounded"
+            src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
+        </figure>
       </div>
-      <h2 class="has-text-centered has-text-weight-semibold ">The food your dog ate is not considered hazardous to dogs!
-        Please keep a close eye on your pal for any
-        abnormal behavior and contact your veternarian with questions or concerns.</h2>
-      <figure class="image is- 1by1">
-        <img class="is-rounded"
-          src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
-      </figure>
     </div>
   </div>
 
   <div id="maybe-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content has-background-white">
+    <div class="modal-content has-background-white p-3">
       <div class="content is-larger">
         <div class="has-text-centered has-background-warning">
           <h1 class="has-text-black	">Caution!
@@ -348,40 +344,40 @@
             Your search is potentially toxic to dogs.
           </h1>
         </div>
-      </div>
-      <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to
-        dogs!
-        Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions
-        and
-        concerns.</h2>
-      <figure class="image is- 1by1">
-        <img class="is-rounded"
-          src="https://media.istockphoto.com/photos/funny-dog-linking-its-lips-with-tongue-out-isolated-on-yellow-picture-id1251347397?k=20&m=1251347397&s=612x612&w=0&h=CJYfQaqfJw10Iqor20yFc7z1YjuPeWZi4E-DPJIvBmw=">
-      </figure>
+        <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to
+          dogs!
+          Please keep a close eye on your pal for any abnormal behavior and contact your veternarian with questions
+          and
+          concerns.</h2>
+        <figure class="image is- 1by1">
+          <img class="is-rounded"
+            src="https://media.istockphoto.com/photos/funny-dog-linking-its-lips-with-tongue-out-isolated-on-yellow-picture-id1251347397?k=20&m=1251347397&s=612x612&w=0&h=CJYfQaqfJw10Iqor20yFc7z1YjuPeWZi4E-DPJIvBmw=">
+        </figure>
 
-      <div class="clinic-info-container">
-        <h3>Closest Veterniary Clinics Open Now</h3>
+        <div class="clinic-info-container has-text-centered">
+          <h3>Closest Veterniary Clinics Open Now</h3>
+        </div>
       </div>
     </div>
   </div>
 
   <div id="definite-hazard-modal" class="modal">
     <div class="modal-background"></div>
-    <div class="modal-content has-background-white">
+    <div class="modal-content has-background-white p-3">
       <div class="content is-larger">
         <div class="has-text-centered has-background-danger">
           <h1 class="has-text-black	"> Your search is toxic to dogs!</h1>
         </div>
-      </div>
-      <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is considered hazardous to dogs!
-        Please seek medical attention for your dog.</h2>
-      <figure class="image is- 1by1">
-        <img class="is-rounded"
-          src="https://media.istockphoto.com/photos/portrait-of-a-dalmatian-dog-on-a-red-background-picture-id1287164463?k=20&m=1287164463&s=612x612&w=0&h=Q3_hVr-0McDGed7RD25AMByej2wvGvTnxwWSOCiTRQQ=">
-      </figure>
-      <div class="clinic-info-container">
-        <h3>Closest Veterniary Clinics Open Now</h3>
-        <!-- Nearest  Animal  Hospital will display here -->
+        <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is considered hazardous to dogs!
+          Please seek medical attention for your dog.</h2>
+        <figure class="image is- 1by1">
+          <img class="is-rounded"
+            src="https://media.istockphoto.com/photos/portrait-of-a-dalmatian-dog-on-a-red-background-picture-id1287164463?k=20&m=1287164463&s=612x612&w=0&h=Q3_hVr-0McDGed7RD25AMByej2wvGvTnxwWSOCiTRQQ=">
+        </figure>
+        <div class="clinic-info-container has-text-centered">
+          <h3>Closest Veterniary Clinics Open Now</h3>
+          <!-- Nearest  Animal  Hospital will display here -->
+        </div>
       </div>
     </div>
   </div>
@@ -571,12 +567,15 @@
     </div>
   </div>
 
-  <div class="columns">
+  <div id="page-footer" class="columns">
     <div class="column is has-text-centered">
       <span>Check us out on </span><a href="https://github.com/adamwagh512/your-dog-ate-what">Github</a>
     </div>
   </div>
 
+
+
+</div>
   <!-- Jquery Script tag -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Script tag for my JS -->
