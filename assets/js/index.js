@@ -1,5 +1,6 @@
 import { determineInputToxicity } from './food_api.js'
 import { clinicsApiCall } from './modals.js'
+import { populateAboutUsSection } from './aboutUs.js'
 
 //Creates an empty JavaScript Array
 var recentSearches = [];
@@ -15,6 +16,8 @@ const SUBMIT_BUTTON_ID = 'submitBtn';
 const BUTTON_LOADING_CLASS = 'is-loading';
 const RECENT_BUTTON_CLASS = 'rs';
 
+const TEAM_CONTAINER_ID = 'team-container';
+
 function init() {
   $("#"+SUBMIT_BUTTON_ID).on('click', submitButtonHandler);
   $('#about-us-button').on('click', showModalHandler);
@@ -22,6 +25,7 @@ function init() {
   $('#faqs-button').on('click', showModalHandler);
 
   $('.'+RECENT_BUTTON_CLASS).on('click', recentSearchButtonHandler);
+  populateAboutUsSection($('#'+TEAM_CONTAINER_ID));
   loadRecentSearches();
 }
 

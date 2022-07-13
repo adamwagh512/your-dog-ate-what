@@ -1,4 +1,3 @@
-
 export { clinicsApiCall };
 // https://maps.googleapis.com/maps/api/place/textsearch/json?query=Animalhospital&key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU
 
