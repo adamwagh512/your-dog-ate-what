@@ -121,6 +121,7 @@
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">About Us</p>
+        <button class="delete my-modal-close" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <div class="columns">
@@ -144,8 +145,8 @@
             </p>
           </div>
         </div>
-        <div class="columns">
-          <div class="column">
+        <div id="team-container" class="columns is-multiline">
+          <div class="column is-half">
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
@@ -203,9 +204,7 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="columns">
-          <div class="column">
+          <div class="column is-half">
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
@@ -264,8 +263,6 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="columns">
           <div class="column">
             <div class="card">
               <div class="card-image">
@@ -297,7 +294,6 @@
           </div>
         </div>
       </section>
-      <button class="my-modal-close" aria-label="close">Close</button>
     </div>
   </div>
 
@@ -308,39 +304,39 @@
         <div class="has-text-centered has-background-info">
           <h1 class="has-text-black">Ruh-oh!</h1>
         </div>
-      
-      <h2 class="has-text-centered has-text-weight-semibold	">We currently don't have your search query in our database!
-        Feel free to reach out at yourdogatewhat@gmail.com</h2>
+
+        <h2 class="has-text-centered has-text-weight-semibold	">We currently don't have your search query in our
+          database!
+          Feel free to reach out at yourdogatewhat@gmail.com</h2>
+        <figure class="image is- 1by1">
+          <img class="is-rounded"
+            src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
+        </figure>
+        <div class="clinic-info-container">
+          <h3>Closest Veterniary Clinics Open Now</h3>
+          <!-- Nearest  Animal  Hospital will display here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="no-hazard-modal" class="modal">
+    <div class="modal-background"></div>
+    <div class="modal-content has-background-white">
+      <div class="content is-larger">
+        <div class="has-text-centered has-background-info">
+          <h1 class="has-text-black">PHEW! <br>Your search is not toxic to dogs!</h1>
+        </div>
+      </div>
+      <h2 class="has-text-centered has-text-weight-semibold ">The food your dog ate is not considered hazardous to dogs!
+        Please keep a close eye on your pal for any
+        abnormal behavior and contact your veternarian with questions or concerns.</h2>
       <figure class="image is- 1by1">
         <img class="is-rounded"
-          src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
+          src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
       </figure>
-      <div class="clinic-info-container">
-        <h3>Closest Veterniary Clinics Open Now</h3>
-        <!-- Nearest  Animal  Hospital will display here -->
-      </div>
-      <button class="my-modal-close" aria-label="close">Close</button>
     </div>
   </div>
-</div>
-
-<div id="no-hazard-modal" class="modal">
-  <div class="modal-background"></div>
-  <div class="modal-content has-background-white">
-    <div class="content is-larger">
-      <div class="has-text-centered has-background-info">
-        <h1 class="has-text-black">PHEW! <br>Your search is not toxic to dogs!</h1>
-      </div>
-    </div>
-    <h2 class="has-text-centered has-text-weight-semibold ">The food your dog ate is not considered hazardous to dogs! Please keep a close eye on your pal for any
-      abnormal behavior and contact your veternarian with questions or concerns.</h2>
-    <figure class="image is- 1by1">
-      <img class="is-rounded"
-        src="https://images.unsplash.com/photo-1583511655805-3d0a917bd436?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80">
-    </figure>
-    <button class="my-modal-close" aria-label="close">Close</button>
-  </div>
-</div>
 
   <div id="maybe-hazard-modal" class="modal">
     <div class="modal-background"></div>
@@ -349,7 +345,8 @@
         <div class="has-text-centered has-background-warning">
           <h1 class="has-text-black	">Caution!
             <br>
-            Your search is potentially toxic to dogs.</h1>
+            Your search is potentially toxic to dogs.
+          </h1>
         </div>
       </div>
       <h2 class="has-text-centered has-text-weight-semibold	">The food your dog ate is not considered hazardous to
@@ -361,11 +358,10 @@
         <img class="is-rounded"
           src="https://media.istockphoto.com/photos/funny-dog-linking-its-lips-with-tongue-out-isolated-on-yellow-picture-id1251347397?k=20&m=1251347397&s=612x612&w=0&h=CJYfQaqfJw10Iqor20yFc7z1YjuPeWZi4E-DPJIvBmw=">
       </figure>
-      
+
       <div class="clinic-info-container">
         <h3>Closest Veterniary Clinics Open Now</h3>
       </div>
-      <button class="my-modal-close">CLOSE ME</button>
     </div>
   </div>
 
@@ -387,254 +383,191 @@
         <h3>Closest Veterniary Clinics Open Now</h3>
         <!-- Nearest  Animal  Hospital will display here -->
       </div>
-        <button class="my-modal-close">CLOSE ME</button>
-      </div>
     </div>
   </div>
-
-
-  
-        
-
-
 
   <div id="poison-index-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">Poison Index</p>
-        <button class="delete" aria-label="close"></button>
+        <button class="delete my-modal-close" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <div id="poison-index-holder" class="wrapper"></div>
       </section>
-      <button class="my-modal-close">Close</button>
     </div>
   </div>
-
-  <div id="unknown-hazard-modal" class="modal">
-    <div class="modal-background"></div>
-        <div class="modal-content">
-            <div class="bulma-st">
-        <div class="content is-larger">
-            <div class="has-text-centered has-background-info">
-            <h1 class="has-text-black">Ruh-oh! .</h1>
-            </div>
-        </div>
-        <h2 class="has-text-centered has-text-weight-semibold	">We currently don't have your search query in our database!
-            Feel free to reach out at yourdogatewhat@gmail.com</h2>
-        <figure class="image is- 1by1">
-            <img class="is-rounded"
-            src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
-        </figure>
-        <!-- <button class="my-modal-close">CLOSE ME</button> -->
-        </div>
-        <button class="my-modal-close">CLOSE ME</button>
-    </div>
-  </div>
-
 
   <div id="faqs-modal" class="modal">
-    <div class="modal-background">
-      </div>
-        <div class="modal-content">
-            <div class="bulma-stuff">
-        <!-- referencing the tutorial video for bulma stuff https://www.youtube.com/watch?v=IiPQYQT2-wg <div class="content"> is addind bottom padding-->
-                <div class="box has-text-centered">
-                    <div class="container">
-                        <div class="is-size-2 has-text-centered">
-                            <div class="">
-                            FAQs
-                            </div>
-                        </div>
-                    </div>
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Frequently Asked Questions</p>
+        <button class="delete my-modal-close" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <div class="box has-text-centered">
+          <div class="container">
+            <div class="is-size-2 has-text-centered">
+              <div class="message box is-primary is-size-6">
+                <h3 class="title is-3">What does this site do?</h3>
+                <div id="marian6">
+                  <p>
+                    The purpose of this site is to enable dog owners to quickly determine whether the substance their
+                    dog ate was toxic and whether they need to see a vet.
+                  </p>
                 </div>
-                    <div class="content"> </div>
-                    <div class="content"> </div>
-   
-                            
-                <div class="box has-text-centered">
-                    <div class="container">  
-                        <div class="is-size-2 has-text-centered">
-                        
-        
-                            <div class="box is-size-6">
-                                <h3 class="title is-3">Who we are ? </h3>
-                                <div id="marian1">
-                                      We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a better place for dogs!
-                                </div>
 
-                                <button onclick="myFunction1()">Response</button>
-                                  <script>
-                                      document.getElementById("marian1").style.display = "none";
-                  
-                                      function myFunction1() {
-                                      var x = document.getElementById("marian1");
-                  
-                                      if (x.style.display === "none") {
-                                          x.style.display = "block";
-                                      } else {
-                                          x.style.display = "none";
-                                      }
-                                      }
-                                  </script>
-                            </div>
-                
-                            <div class="message box is-primary">
-                            
-                                <h3 class="title is-3">Why did we build this web site? </h3>
-                                <div id="marian2">
-                                    Make the world a better place for dogs! People around the world love their pets, included them as a beloved member of the family, this web site is ment to give valuable information to the pet owners about dog health protection tool
-                                </div>
+                <button onclick="myFunction6()">Response</button>
+                <script>
+                  document.getElementById("marian6").style.display = "none";
 
-                                <button onclick="myFunction2()">Response</button>
-                                  <script>
-                                      document.getElementById("marian2").style.display = "none";
+                  function myFunction6() {
+                    var x = document.getElementById("marian6");
 
-                                      function myFunction2() {
-                                      var x = document.getElementById("marian2");
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
 
-                                      if (x.style.display === "none") {
-                                          x.style.display = "block";
-                                      } else {
-                                          x.style.display = "none";
-                                      }
-                                      }
-                                  </script>
-                            </div>
-                                      
-                            <div class="box is-size-6">
-                                <h3 class="title is-3">How do I use this site </h3>
-                                  <div id="marian4">
-                                    <p> Type what your dog ate into the search bar and click the Submit button below the search bar.
-                                        Your results will pop up in a modal window. If a vet visit is recommended we will provide you with options for the nearest open vet offices.
-                                    </p>
-                                  </div>
-
-                                <button onclick="myFunction4()">Response</button>
-                                <script>
-                                    document.getElementById("marian4").style.display = "none";
-
-                                    function myFunction4() {
-                                    var x = document.getElementById("marian4");
-
-                                    if (x.style.display === "none") {
-                                        x.style.display = "block";
-                                    } else {
-                                        x.style.display = "none";
-                                    }
-                                    }
-                                </script>
-                            </div>
-
-
-
-                                <div class="message box is-primary">
-
-                                    <h3 class="title is-3">How did we build the site? </h3>
-                                    <!-- insert response  -->
-                                
-                                    <!-- https://github.com/adamwagh512/your-dog-ate-what -->
-
-
-                                    <div id="marian5">
-                                    Wisist the Github site: https://github.com/adamwagh512/your-dog-ate-what
-                                    <div><a href="https://github.com/adamwagh512/your-dog-ate-what">Github Link!</a></div>   -->
-                                    </div>
-
-                                    <button onclick="myFunction5()">Response</button>
-                                    <script>
-                                        document.getElementById("marian5").style.display = "none";
-
-                                        function myFunction5() {
-                                        // document.getElementById("marian1").style.display = "none";
-                                        var x = document.getElementById("marian5");
-
-                                        if (x.style.display === "none") {
-                                        x.style.display = "block";
-                                        } else {
-                                        x.style.display = "none";
-                                        }
-                                        }
-                                    </script>
-                                </div>
-
-                                <div class="box is-size-6">
-                                  <h3 class="title is-3">What is this site do </h3>
-                                    <div id="marian6">
-                                      <p> Te main function of this web site is to answer to the user inquiry related to the food and main food ingredients by accessing large public data bases
-                                    </div>
-  
-                                  <button onclick="myFunction6()">Response</button>
-                                  <script>
-                                      document.getElementById("marian6").style.display = "none";
-  
-                                      function myFunction6() {
-                                      var x = document.getElementById("marian6");
-  
-                                      if (x.style.display === "none") {
-                                          x.style.display = "block";
-                                      } else {
-                                          x.style.display = "none";
-                                      }
-                                      }
-                                  </script>
-                              </div>
-  
-  
-  
-                                  <div class="message box is-primary">
-  
-                                      <h3 class="title is-3">I know  another toxic food that is not included, new studies have data. How can I add it? </h3>
-                                      <!-- insert response  -->
-                                  
-                                      <!-- https://github.com/adamwagh512/your-dog-ate-what -->
-  
-  
-                                      <div id="marian7">
-                                      Send an email message to the following email address .....johnsmith@...com
-                                        
-                                      </div>
-  
-                                      <button onclick="myFunction7()">Response</button>
-                                      <script>
-                                          document.getElementById("marian7").style.display = "none";
-  
-                                          function myFunction7() {
-                                          // document.getElementById("marian1").style.display = "none";
-                                          var x = document.getElementById("marian7");
-  
-                                          if (x.style.display === "none") {
-                                          x.style.display = "block";
-                                          } else {
-                                          x.style.display = "none";
-                                          }
-                                          }
-                                      </script>
-                                  </div>
-            
-                                <div class="column"></div>
-                                <div class="column about-us">
-                                    <h3 class="title is-3"></h3>
-                                        <!-- <p> -->
-                                        <!-- We are a group of dog loving coding students who came together with one simple goal in mind; Make the world a better place for dogs! -->
-                                        <!-- </p> -->
-                                    <h3 class="title is-3">Our Mission Statement </h3>
-                                        <p class="is-size-5">
-                                        Our mission is to quickly provide free, accurate and actionable information to ensure that your dogs receive appropriate medical care after they eat something they shouldn't have
-                                        </p>
-                                </div>
-
-                              
-                    
-                               
-                        </div>
-                    </div>
+              <div class="box is-size-6">
+                <h3 class="title is-3">How do I use this site?</h3>
+                <div id="marian4">
+                  <p>
+                    Type what your dog ate into the search box and click the submit button below that box.
+                    Your results will pop up in a window that says how potentially hazardous the consumed item is.
+                    If we think a vet visit is necessary, we will provide information with for the nearest open veterinary clinics.
+                  </p>
                 </div>
-            <!-- <button class="my-modal-close">CLOSE ME</button> -->
-            <button class="my-modal-close">CLOSE ME</button>
 
+                <button onclick="myFunction4()">Response</button>
+                <script>
+                  document.getElementById("marian4").style.display = "none";
+
+                  function myFunction4() {
+                    var x = document.getElementById("marian4");
+
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
+
+              <div class="message box is-primary is-size-6">
+                <h3 class="title is-3">Who are we?</h3>
+                <div id="marian1">
+                  We are a group of dog-loving, coding students who came together with one simple goal in mind: Make the
+                  world a better place for dogs!
+                </div>
+
+                <button onclick="myFunction1()">Response</button>
+                <script>
+                  document.getElementById("marian1").style.display = "none";
+
+                  function myFunction1() {
+                    var x = document.getElementById("marian1");
+
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
+
+              <div class="box is-size-6">
+                <h3 class="title is-3">Why did we build this site? </h3>
+                <div id="marian2">
+                  To make the world a better place for dogs! People around the world love their pets; some people even
+                  consider them to be family members. This web site is designed to help people keep their dogs safe and healthy.
+                </div>
+
+                <button onclick="myFunction2()">Response</button>
+                <script>
+                  document.getElementById("marian2").style.display = "none";
+
+                  function myFunction2() {
+                    var x = document.getElementById("marian2");
+
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
+
+              <div class="message box is-primary">
+
+                <h3 class="title is-3">I know a toxic substance that is not in your poison index. Can you add it? </h3>
+                <div id="marian7">
+                  Yes we can! Send an email message to <a href="mailto:yourdogatewhat@gmail.com">yourdogatewhat@gmail.com</a>, 
+                  and we'll add it when we get the chance.
+                </div>
+
+                <button onclick="myFunction7()">Response</button>
+                <script>
+                  document.getElementById("marian7").style.display = "none";
+                  function myFunction7() {
+                    // document.getElementById("marian1").style.display = "none";
+                    var x = document.getElementById("marian7");
+
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
+
+
+              <div class="message box is-size-6">
+
+                <h3 class="title is-3">How did we build the site?</h3>
+                <div id="marian5">
+                  We built this page using a variety of APIs and frontend web technologies. For more information,
+                  take a look at our <a href="https://github.com/adamwagh512/your-dog-ate-what">GitHub repo</a>.
+                </div>
+
+                <button onclick="myFunction5()">Response</button>
+                <script>
+                  document.getElementById("marian5").style.display = "none";
+
+                  function myFunction5() {
+                    var x = document.getElementById("marian5");
+
+                    if (x.style.display === "none") {
+                      x.style.display = "block";
+                    } else {
+                      x.style.display = "none";
+                    }
+                  }
+                </script>
+              </div>
+
+              <div class="column"></div>
+              <div class="column about-us">
+                <h3 class="title is-3">Our Mission Statement </h3>
+                <p class="is-size-5">
+                  Our mission is to quickly provide free, accurate and actionable information to ensure that your dogs
+                  receive appropriate medical care after they eat something they shouldn't have
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
     </div>
   </div>
 
@@ -646,10 +579,11 @@
 
   <!-- Jquery Script tag -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <!-- Script tag for my JS -->
   <script type="module" src="./assets/js/index.js"></script>
   <script type="module" src="./assets/js/poisonIndex.js"></script>
+  <script type="module" src="./assets/js/food_api.js"></script>
+  <script type="module" src="./assets/js/data/poison_list.js"></script>
 </body>
 
 </html>

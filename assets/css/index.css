@@ -91,3 +91,5 @@ font-family: 'Lato', sans-serif; */
 .definite-hazard-modal{
     background-color: #CA2E55;
 }
+
+.image img { height: 100%; object-fit: cover; }

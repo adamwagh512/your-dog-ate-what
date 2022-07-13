@@ -1,5 +1,6 @@
 import { determineInputToxicity } from './food_api.js'
-import { clinicsApiCall } from './modals.js'
+import { clinicsApiCall, initModals } from './modals.js'
+import { populateAboutUsSection } from './aboutUs.js'
 
 //Creates an empty JavaScript Array
 var recentSearches = [];
@@ -9,9 +10,41 @@ const MAYBE_HAZARD_ID = 'maybe-hazard-modal';
 const SEVERE_HAZARD_ID = 'definite-hazard-modal';
 const UNKNOWN_HAZARD_ID = 'unknown-hazard-modal';
 
+const SEARCH_AREA_ID = 'eaten';
+
+const SUBMIT_BUTTON_ID = 'submitBtn';
+const BUTTON_LOADING_CLASS = 'is-loading';
+const RECENT_BUTTON_CLASS = 'rs';
+
+const TEAM_CONTAINER_ID = 'team-container';
+
 function init() {
-  $('.rs').on('click', onclickhandler);
+  $("#"+SUBMIT_BUTTON_ID).on('click', submitButtonHandler);
+  $('#about-us-button').on('click', showModalHandler);
+  $('#poison-index-button').on('click', showModalHandler);
+  $('#faqs-button').on('click', showModalHandler);
+  
+  $(".my-modal-close").click(function() {
+    $("html").removeClass("is-clipped");
+    $(this).parents('.modal').removeClass("is-active");
+  });
+
+  initModals();
+
+  $('.'+RECENT_BUTTON_CLASS).on('click', recentSearchButtonHandler);
+  populateAboutUsSection($('#'+TEAM_CONTAINER_ID));
   loadRecentSearches();
+}
+
+function debugInit() {
+  $("#no-hazard-debug-button").on('click', showNoHazardHandler);
+  $("#maybe-hazard-debug-button").on('click', showMaybeHazardHandler);
+  $("#faqs-debug-button").on('click', showModalHandler);
+  $("#poison-index-debug-button").on('click', showModalHandler);
+  $("#about-us-debug-button").on('click', showModalHandler);
+  $("#definite-hazard-debug-button").on('click', showSevereHazardHandler);
+  $("#unknown-hazard-debug-button").on('click', showUnknownHazardHandler);
+
 }
 
 //This function loads recent searches from local storage when page is loaded
@@ -42,7 +75,13 @@ function loadRecentSearches() {
 
 //this function is called every time the submit button is clicked.
 function searchFunction(userInput, recentSearch = false) {
+  let searchBox = $('#'+SUBMIT_BUTTON_ID);
+  let recentButtons = $('.'+RECENT_BUTTON_CLASS);
+  searchBox.addClass(BUTTON_LOADING_CLASS);
+  recentButtons.addClass(BUTTON_LOADING_CLASS);
   if (!userInput) {
+    searchBox.removeClass(BUTTON_LOADING_CLASS);
+    recentButtons.removeClass(BUTTON_LOADING_CLASS);
     return;
   }
 
@@ -63,7 +102,7 @@ function searchFunction(userInput, recentSearch = false) {
 
   determineInputToxicity(userInput)
   .then((toxicity) => {
-
+    console.log('main then')
 
     let modalTarget;
     let clinicContainer;
@@ -97,46 +136,37 @@ function searchFunction(userInput, recentSearch = false) {
         clinicsApiCall(clinicContainer);
         break;
     }
+    
+    searchBox.removeClass(BUTTON_LOADING_CLASS);
+    recentButtons.removeClass(BUTTON_LOADING_CLASS);
   });
 }
 
+function submitButtonHandler(event) {
+  console.log('button handler');
+  console.log(event);
+  let searchBox = $('#'+SEARCH_AREA_ID);
+  let searchTerm = searchBox.val().trim();
+  console.log('searchterm: ' + searchTerm);
+  searchBox.val('');
+  searchFunction(searchTerm, false);
+  loadRecentSearches();
+}
+
 //This function was made to try to make it easier to wire everything up later
-function onclickhandler(event) {
+function recentSearchButtonHandler(event) {
   // console log for testing purposes
   // Call with the string
-  let searchTerm = $(event.target).text();
+  console.log('button handler');
+  console.log(event);
+  let searchButton = $(event.target);
+  let searchTerm = searchButton.text();
+  console.log('searchterm: ' + searchTerm)
+  searchButton.val('');
   searchFunction(searchTerm, true);
+  loadRecentSearches();
 }
 // Once the submit button is clicked, take the input from textbox and save it to local storage
-
-function indexPageInit() {
-    $("#submitBtn").on('click', submitEatenHandler);
-    $('#about-us-button').on('click', showModalHandler);
-    $('#poison-index-button').on('click', showModalHandler);
-    $('#faqs-button').on('click', showModalHandler);
-}
-
-function debugInit() {
-    $("#no-hazard-debug-button").on('click', showNoHazardHandler);
-    $("#maybe-hazard-debug-button").on('click', showMaybeHazardHandler);
-    $("#faqs-debug-button").on('click', showModalHandler);
-    $("#poison-index-debug-button").on('click', showModalHandler);
-    $("#about-us-debug-button").on('click', showModalHandler);
-    $("#definite-hazard-debug-button").on('click', showSevereHazardHandler);
-    $("#unknown-hazard-debug-button").on('click', showUnknownHazardHandler);
-
-    $(".my-modal-close").click(function() {
-        $("html").removeClass("is-clipped");
-        $(this).parents('.modal').removeClass("is-active");
-     });
-
-}
-
-function submitEatenHandler(event) {
-    let eatenInput = $("#eaten").val();
-    localStorage.setItem("getValue",eatenInput);
-    console.log(eatenInput);
-}
 
 function showModalHandler(event) {
     console.log("showModal");
@@ -174,30 +204,30 @@ function showUnknownHazardHandler(event) {
   clinicsApiCall(clinicContainer);
 }
 
-debugInit()
-indexPageInit()
-
 // Sets buttons display to a default of hide
 $("#buttonsContainer").children().hide();
 
-// Once the submit button is clicked, take the input from textbox and save it to local storage. The functions on the end will help populate the recent searches bar and clear the text from the search bar.
-$("#submitBtn").on("click", function () {
-  var typed = $("#eaten").val().trim();
-  console.log(typed);
-  // calls searchFunction from above
-  searchFunction(typed);
-  //clears the text from the search bar
-  $("#eaten").val("");
-  // refreshes load receent searches function
-  loadRecentSearches();
-});
+debugInit();
 init();
+
+
+// Once the submit button is clicked, take the input from textbox and save it to local storage. The functions on the end will help populate the recent searches bar and clear the text from the search bar.
+// $("#submitBtn").on("click", function () {
+//   var typed = $("#eaten").val().trim();
+//   console.log(typed);
+//   // calls searchFunction from above
+//   searchFunction(typed);
+//   //clears the text from the search bar
+//   $("#eaten").val("");
+//   // refreshes load receent searches function
+//   loadRecentSearches();
+// });
 //loads recent searches from local storage when page is loaded
 
-function myMap() {
-  var mapProp = {
-    center: new google.maps.LatLng(51.508742, -0.120850),
-    zoom: 5,
-  };
-  var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
-}
+// function myMap() {
+//   var mapProp = {
+//     center: new google.maps.LatLng(51.508742, -0.120850),
+//     zoom: 5,
+//   };
+//   var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+// }
