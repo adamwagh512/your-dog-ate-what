@@ -18,6 +18,7 @@ Click on the Poison Index to access our poison index. Please refer to our poison
 Click on the Contact Us tab to send us an email
 
 Click on the FAQs tab to access our frequently asked questions modal 
+
 ![Alt text](./assets/images/landing-page-menu.jpg)
 ### How to use the Poison Index
 1) Navigate to the poison index as described above and click on the link
@@ -32,7 +33,7 @@ level listed beside it as seen below.
 5) If you do not see the toxin you are concerned about please contact your vet first, and then send us an email at yourpetatewhat@gmail.com so we research the toxin and add it to our database if needed.
 ![Alt text](./assets/images/poisonIndex.jpg)
 ### How To Use the Search Bar
-1) Type what your dog ate into the search bar and click the Submit button below the search bar
+1) Type what your dog ate into the search bar and click the Submit button below the search bar. Your recent searches will appear on the right hand side of the page.
  ![Alt text](./assets/images/searchbar.jpg)
 
 2) Your results will pop up in a modal as seen below. If a vet visit is recommended we will provide you with options for the nearest open vet offices.
