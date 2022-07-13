@@ -58,6 +58,7 @@ head {
 
 #recent-searches-label {
     font-family: 'Oswald', sans-serif;
+    margin: .8rem;
 }
 
 .panel {
@@ -114,6 +115,11 @@ head {
 
 #page-footer {
     margin-bottom: 0 !important;
+}
+
+.text-input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .button {

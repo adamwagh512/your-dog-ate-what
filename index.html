@@ -58,7 +58,7 @@
 
   <div id="top-container" class="container is-max-desktop">
   <!-- Columns is how Bulma organizes stuff -->
-  <div class="columns">
+  <div class="columns mx-1">
     <!-- This column deals with the main menu on the left hand side of the page (top of page if mobile) -->
 
     <div class="column is-full">
@@ -76,7 +76,7 @@
         </div>
       </div>
 
-      <div class="field has-addons">
+      <div class="field has-addons text-input">
         <div class="control is-expanded">
           <!-- Giving input the ID of eaten -->
           <input type="text" maxlength="25" id="eaten" class="input is-large" placeholder="What did your dog eat?"></textarea>
@@ -93,19 +93,21 @@
   </div>
 
     <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
+  <div id="recent-searches-area">
     <h2 id="recent-searches-label" class="has-text-centered is-size-2">Recent Searches</h2>
-  <div id="buttonsContainer" class="columns is-centered">
-    <div class="column">
-      <button id="rs1" class="button is-large is-fullwidth rs"></button>
-    </div>
-    <div class="column">
-          <button id="rs2" class="button is-large is-fullwidth rs"></button>
-    </div>
-    <div class="column">
-      <button id="rs3" class="button is-large is-fullwidth rs"></button>
-    </div>
-    <div class="column">
-      <button id="rs4" class="button is-large is-fullwidth rs"></button>
+    <div id="buttonsContainer" class="columns is-centered mx-1">
+      <div class="column">
+        <button id="rs1" class="button is-large is-fullwidth rs"></button>
+      </div>
+      <div class="column">
+            <button id="rs2" class="button is-large is-fullwidth rs"></button>
+      </div>
+      <div class="column">
+        <button id="rs3" class="button is-large is-fullwidth rs"></button>
+      </div>
+      <div class="column">
+        <button id="rs4" class="button is-large is-fullwidth rs"></button>
+      </div>
     </div>
   </div>
   
