@@ -25,7 +25,7 @@ function determineInputToxicity(eatenInput) {
         // Determine if each item has toxins
         // Comparing ingred. list against our poison list
         let maxToxicity = 0;
-        for (var i = 0; i < 5; i++) {
+        for (var i = 0; i < Math.min(5, foodItems.length); i++) {
             let foodItem = foodItems[i];
             let toxicityLevel = determineFoodToxicity(foodItem);
             maxToxicity = Math.max(maxToxicity, toxicityLevel);

@@ -28,22 +28,25 @@ function loadRecentSearches() {
 }
 
 //this function is called every time the submit button is clicked.
-function searchFunction(userInput) {
-  // Check if empty
+function searchFunction(userInput, recentSearch = false) {
+  if (!recentSearch) {
+    console.log(userInput);
+    // Check if empty
+  
+      // pushes eaten value into an empty array
+      recentSearches.unshift($("#eaten").val());
+  
+      // If there are more than 4 recent searches, the oldest one is removed from the array
+      if (recentSearches.length > 4) {
+        recentSearches.pop();
+      }
+      //Converts recentSearches array into something that can be stored in local storage.
+      localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
+  }
 
-  console.log(userInput);
   determineInputToxicity(userInput)
   .then((toxicity) => {
 
-    // pushes eaten value into an empty array
-    recentSearches.unshift($("#eaten").val());
-
-    // If there are more than 4 recent searches, the oldest one is removed from the array
-    if (recentSearches.length > 4) {
-      recentSearches.pop();
-    }
-    //Converts recentSearches array into something that can be stored in local storage.
-    localStorage.setItem("recentSearches", JSON.stringify(recentSearches));
 
     let modalTarget;
     let clinicContainer;
@@ -84,6 +87,10 @@ function searchFunction(userInput) {
 function onclickhandler(event) {
   // console log for testing purposes
   console.log(event.target);
+  // Call with the string
+  let searchTerm = $(event.target).text();
+  console.log(searchTerm);
+  searchFunction(searchTerm, true);
 }
 // Once the submit button is clicked, take the input from textbox and save it to local storage
 
