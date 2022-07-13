@@ -1,6 +1,5 @@
 export { populateAboutUsSection };
 
-const TEAM_CONTAINER_ID = 'team-container';
 const TEAM_MEMBERS = [
     {
         name: 'Kurt Bixby',
