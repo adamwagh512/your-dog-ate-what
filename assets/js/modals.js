@@ -23,6 +23,7 @@ function initModals() {
         }
         
         function closeModal($el) {
+            $("html").removeClass("is-clipped");
             $el.classList.remove('is-active');
         }
         
