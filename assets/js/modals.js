@@ -92,6 +92,7 @@ function populateModal(data) {
 
 // Rename myFunction at some point
 function buildClinicInfoSection(clinincContainerElement, clinics) {
+    clinincContainerElement.html('');
     for (var i = 0; i < CLINIC_NUMBER; i++) {
         let clinic = clinics[i];
         console.debug(clinic);
