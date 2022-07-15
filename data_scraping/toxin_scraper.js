@@ -1,3 +1,6 @@
+// Ran this in my browser to grab data
+// Saved here for posterity and reference
+
 // Used on https://www.petpoisonhelpline.com/poisons/
 let poisons = document.querySelectorAll('.open-close li');
 

@@ -2,22 +2,19 @@ import { poisonsList } from "./data/poison_list.js";
 
 const poisonIndexHolder = $('#poison-index-holder');
 
-// Add on click for the poison sections
-
+// Initializes the poison index
 function init() {
-    console.debug('Initializing Poison Index');
     buildPoisonIndex(poisonsList);
     $('.letter-section h2').on('click', (event) => {
-        console.debug('clicked');
-        console.debug($(event.currentTarget).parent());
         $(event.currentTarget).parent().toggleClass('is-open');
-        
     });
 }
 
+// The main create function
+// Makes the index from the supplied poison list
 function buildPoisonIndex(poisonList) {
     let poisonElements = {};
-    poisonsList.forEach((poison) => {
+    poisonList.forEach((poison) => {
         // Build element
         let poisonElement = buildPoisonElement(poison);
         let poisonStartingChar = poison.name[0];
@@ -26,23 +23,26 @@ function buildPoisonIndex(poisonList) {
         if ('0' <= poisonStartingChar && poisonStartingChar <= '9') {
             poisonStartingChar = '#';
         }
+
         // Group each element into its letter
+        // If we don't have a pool for this letter, make one
         if (!Object.hasOwn(poisonElements, poisonStartingChar)) {
             poisonElements[poisonStartingChar] = [];
         }
+        // Push the newly created element into that pool
         poisonElements[poisonStartingChar].push(poisonElement);
     })
 
     // Object.entries returns an array of [key, value] for all properties in the object
+    // Letter is the grouping and poisons is an array of poison elements to be appended
     for (const [letter, poisons] of Object.entries(poisonElements)) {
         let letterSection = buildLetterSectionElement(letter);
         $(letterSection).children('ul').append(poisons);
         poisonIndexHolder.append(letterSection);
     }
-
-    console.debug(poisonIndexHolder);
 }
 
+// Build element = create element + populate element
 function buildPoisonElement(poison) {
     let poisonElement = createEmptyPoisonElement();
     populatePoisonElement(poisonElement, poison);
@@ -61,7 +61,8 @@ function createEmptyPoisonElement() {
 function populatePoisonElement(poisonElement, poison) {
     $(poisonElement.children('p')[0]).text(poison.name);
 
-    // Add class depending on 
+    // Add class depending on toxicity
+    // This functionality is never exploited
     let severityString = '';
     let severityClass = '';
     switch(poison.toxicityLevel) {
@@ -87,6 +88,7 @@ function populatePoisonElement(poisonElement, poison) {
     $(poisonElement.children('p')[1]).text(severityString).addClass(severityClass);
 }
 
+// No populate function, because populate is just one line
 function buildLetterSectionElement(letter) {
     let sectionElement = createEmptyLetterSectionElement();
     sectionElement.children('h2').text(letter);

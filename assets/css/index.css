@@ -46,6 +46,7 @@ head {
     background-color: var(--a5);
     margin-top: 20px;
 }
+
 .textarea {
     border-radius: 9999px;
     resize: none;
@@ -139,11 +140,8 @@ head {
 .about-us {
     text-align: center;
 }
-/* font-family: 'Coming Soon', cursive;
-font-family: 'Dosis', sans-serif;
-font-family: 'Lato', sans-serif; */
 
-.definite-hazard-modal{
+.definite-hazard-modal {
     background-color: #CA2E55;
 }
 

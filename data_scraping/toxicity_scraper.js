@@ -9,6 +9,8 @@ import { filter } from 'domutils';
 
 // console.log(knownToxins);
 
+// This section was used to filter the master list down into something more manageable and relevant to our goals
+
 // let wantedCategories = new Set(['foods', 'household items', 'metals', 'medications']);
 
 // let categories = knownToxins.map(toxin => toxin.category.toLowerCase());
@@ -50,6 +52,7 @@ for(var i = 0; i < filteredToxins.length; i++) {
 
 let toxicityMeterToxins = [];
 let otherToxins = [];
+// Function to load in the master toxins list and grab all of the alternate names and toxicity levels from the website linked in the data
 async function scrapeToxin(toxin) {
     let url = toxin.link;
     // fetch(url)
