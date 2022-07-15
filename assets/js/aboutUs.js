@@ -1,5 +1,6 @@
 export { populateAboutUsSection };
 
+// Data for the About Us section
 const TEAM_MEMBERS = [
     {
         name: 'Kurt Bixby',
@@ -38,6 +39,8 @@ const TEAM_MEMBERS = [
     }
 ]
 
+// Randomizes the order
+// Overwrites the existing HTML
 function populateAboutUsSection(teamContainer) {
     let memberOrder = shuffle([0, 1, 2, 3, 4]);
     let columns = teamContainer.children('.column');
@@ -53,10 +56,11 @@ function populateAboutUsSection(teamContainer) {
         a.attr('href', `https://github.com/${member.github}`);
         a.text(member.github);
         $(ps[1]).text('GitHub: ').append(a);
-        // $(element).find('a').text(member.github).attr('href', ``);
     })
 }
 
+// Taken from stackoverflow
+// Shuffles an array, used to random the order of the members
 function shuffle(array) {
     let currentIndex = array.length,  randomIndex;
   

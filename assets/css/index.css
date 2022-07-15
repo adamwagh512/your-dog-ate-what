@@ -47,6 +47,7 @@ head {
     background-color: var(--a5);
     margin-top: 20px;
 }
+
 /* Styling for text area */
 .textarea {
     border-radius: 9999px;
