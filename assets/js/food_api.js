@@ -1,11 +1,11 @@
 import { poisonsList } from "./data/poison_list.js";
 export { determineInputToxicity };
 
-var access_key = '6orO8TB9RRot89tK';
+const API_KEY = 'gHjwTBgrEpM2v0G';
 const POISON_SET = createPoisonSet(poisonsList);
 
 function determineInputToxicity(eatenInput) {
-    let requestURL = 'https://chompthis.com/api/v2/food/branded/name.php?api_key=6orO8TB9RRot89tK&name=' + eatenInput;
+    let requestURL = `https://chompthis.com/api/v2/food/branded/name.php?api_key=${API_KEY}&name=` + eatenInput;
 
     // Search through poison list
     let poisonListMatch = determineFoodToxicity({ingredients: eatenInput});
