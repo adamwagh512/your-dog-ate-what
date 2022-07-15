@@ -1,3 +1,4 @@
+// Used to make a list of toxins that needed their data to be manually determined and entered
 import { poisonsList } from './poison_list.js';
 
 console.log(poisonsList)

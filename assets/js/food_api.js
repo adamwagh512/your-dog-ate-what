@@ -4,10 +4,12 @@ export { determineInputToxicity };
 const API_KEY = 'gHjwTBgrEpM2v0G';
 const POISON_SET = createPoisonSet(poisonsList);
 
+// 
 function determineInputToxicity(eatenInput) {
     let requestURL = `https://chompthis.com/api/v2/food/branded/name.php?api_key=${API_KEY}&name=` + eatenInput;
 
-    // Search through poison list
+    // Search through the poison list for the specific thing eaten
+    // No need for a network call if we already have the info
     let poisonListMatch = determineFoodToxicity({ingredients: eatenInput});
     console.debug(poisonListMatch)
     if (poisonListMatch != 0) {
@@ -30,13 +32,12 @@ function determineInputToxicity(eatenInput) {
             let toxicityLevel = determineFoodToxicity(foodItem);
             maxToxicity = Math.max(maxToxicity, toxicityLevel);
         }
-        console.log(maxToxicity)
         return maxToxicity;
     })
 }
 
 // Return toxicity level 0, 1, 2, 3
-// Unknown, mild, moderate, severe
+// 0 = Unknown
 function determineFoodToxicity(foodItem) {
     console.log(foodItem)
     // Parse the ingredients list string into ingredients
@@ -58,6 +59,8 @@ function determineFoodToxicity(foodItem) {
 }
 
 // Return an array of ingredients
+// Kind of janky, but it mostly works
+// A regex could be useful here
 function parseIngredientsString(ingredientsString) {
     let something = ingredientsString.replace(/[\[\]\(\).]/g, ',');
     let fewerCommas = something.replace(/,+/g, ',');
@@ -73,6 +76,7 @@ function parseIngredientsString(ingredientsString) {
     return fullyParsed;
 }
 
+// Creates a JS object from the poisons list for quick toxicity lookup
 function createPoisonSet(specificPoisonsList) {
     let poisonSet = {}
     for (var i = 0; i < specificPoisonsList.length; i++) {
