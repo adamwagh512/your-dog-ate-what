@@ -1,4 +1,4 @@
-export { clinicsApiCall, initModals };
+export { clinicsApiCall, placesClinicsApiCall, initModals };
 // https://maps.googleapis.com/maps/api/place/textsearch/json?query=Animalhospital&key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU
 
 // // Set up function for searching maps for "vet", "veterinarian", "animal hospital" , "24 hours animal hospital"
@@ -85,10 +85,6 @@ function clinicsApiCall(clinincContainerElement) {
     .then(data => buildClinicInfoSection(clinincContainerElement, data.results))
 }
 
-function populateModal(data) {
-
-}
-
 // Rename myFunction at some point
 function buildClinicInfoSection(clinincContainerElement, clinics) {
     for (var i = 0; i < CLINIC_NUMBER; i++) {
@@ -110,6 +106,59 @@ function buildClinicInfoSection(clinincContainerElement, clinics) {
 
             clinincContainerElement.append(clinicBoxElement);
         });
+    }
+}
+
+function placesClinicsApiCall(clinincContainerElement) {
+    let map = new google.maps.Map(document.getElementById('map'));
+
+    let service = new google.maps.places.PlacesService(map);
+
+    let request = {
+        query: 'animal hospital',
+        type: 'veterinary_care'
+    };
+    service.textSearch(request, (results, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            console.log(results);
+            placesBuildClinicInfoSection(clinincContainerElement, results);
+        }
+    });
+}
+
+function placesDetailsApiCall(clinicContainerElement, clinic) {
+    let map = new google.maps.Map(document.getElementById('map'));
+
+    let service = new google.maps.places.PlacesService(map);
+
+    let request = {
+        placeId: clinic.place_id,
+        fields: ['formatted_phone_number', 'opening_hours']
+    };
+    service.getDetails(request, (results, status) => {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+            console.log(results);
+            let phoneNumber = results.formatted_phone_number;
+            let clinicObject = {
+                address: clinic.formatted_address,
+                name: clinic.name,
+                phoneNumber: phoneNumber
+            };
+            let clinicBoxElement = createClinicBoxElement().addClass('box has-text-centered');
+            // Get i-th clinic box element and pass it into here
+            populateClinicBoxElement(clinicBoxElement, clinicObject);
+            console.debug(clinicBoxElement);
+
+            clinicContainerElement.append(clinicBoxElement);
+        }
+    });
+}
+
+function placesBuildClinicInfoSection(clinicContainerElement, clinics) {
+    for (var i = 0; i < CLINIC_NUMBER; i++) {
+        let clinic = clinics[i];
+        console.debug(clinic);
+        placesDetailsApiCall(clinicContainerElement, clinic)
     }
 }
 
@@ -144,7 +193,7 @@ function requestClinicDetails(clinicId) {
         return data.result.formatted_phone_number;
     });
 }
-
+window.initModals = initModals;
 // googleMapsTests();
 
 // function googleMapsTests() {
