@@ -1,4 +1,4 @@
-export { clinicsApiCall, placesClinicsApiCall, initModals };
+export { placesClinicsApiCall, initModals };
 // https://maps.googleapis.com/maps/api/place/textsearch/json?query=Animalhospital&key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU
 
 // // Set up function for searching maps for "vet", "veterinarian", "animal hospital" , "24 hours animal hospital"
