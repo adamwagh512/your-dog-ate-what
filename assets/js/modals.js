@@ -23,6 +23,7 @@ function initModals() {
         }
         
         function closeModal($el) {
+            $("html").removeClass("is-clipped");
             $el.classList.remove('is-active');
         }
         
@@ -87,6 +88,7 @@ function clinicsApiCall(clinincContainerElement) {
 
 // Rename myFunction at some point
 function buildClinicInfoSection(clinincContainerElement, clinics) {
+    clinincContainerElement.html('');
     for (var i = 0; i < CLINIC_NUMBER; i++) {
         let clinic = clinics[i];
         console.debug(clinic);
@@ -161,10 +163,11 @@ function placesBuildClinicInfoSection(clinicContainerElement, clinics) {
         clinicContainerElement.children('h3').text('No nearby open clinics')
     } else {
         clinicContainerElement.children('h3').text('Closest Veterniary Clinics Open Now')
+        let infoContainerElement = clinicContainerElement.children('div').html('');
         for (var i = 0; i < numberOfClinics; i++) {
             let clinic = clinics[i];
             console.debug(clinic);
-            placesDetailsApiCall(clinicContainerElement, clinic)
+            placesDetailsApiCall(infoContainerElement, clinic)
         }
     }
 }

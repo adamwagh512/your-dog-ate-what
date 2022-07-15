@@ -16,6 +16,8 @@ const SUBMIT_BUTTON_ID = 'submitBtn';
 const BUTTON_LOADING_CLASS = 'is-loading';
 const RECENT_BUTTON_CLASS = 'rs';
 
+const CLINIC_INFO_CONTAINER_CLASS = 'clinic-info-container';
+
 const TEAM_CONTAINER_ID = 'team-container';
 
 function init() {
@@ -42,17 +44,6 @@ function init() {
   $('.'+RECENT_BUTTON_CLASS).on('click', recentSearchButtonHandler);
   populateAboutUsSection($('#'+TEAM_CONTAINER_ID));
   loadRecentSearches();
-}
-
-function debugInit() {
-  $("#no-hazard-debug-button").on('click', showNoHazardHandler);
-  $("#maybe-hazard-debug-button").on('click', showMaybeHazardHandler);
-  $("#faqs-debug-button").on('click', showModalHandler);
-  $("#poison-index-debug-button").on('click', showModalHandler);
-  $("#about-us-debug-button").on('click', showModalHandler);
-  $("#definite-hazard-debug-button").on('click', showSevereHazardHandler);
-  $("#unknown-hazard-debug-button").on('click', showUnknownHazardHandler);
-
 }
 
 //This function loads recent searches from local storage when page is loaded
@@ -124,7 +115,7 @@ function searchFunction(userInput, recentSearch = false) {
       case 3:
         // Moderate
         modalTarget = '#'+MAYBE_HAZARD_ID;
-        clinicContainer = $(modalTarget).find('.clinic-info-container');
+        clinicContainer = $(modalTarget).find('.'+CLINIC_INFO_CONTAINER_CLASS);
         showModal(modalTarget);
         placesClinicsApiCall(clinicContainer);
         break;
@@ -132,14 +123,14 @@ function searchFunction(userInput, recentSearch = false) {
       case 5:
         // Severe
         modalTarget = '#'+SEVERE_HAZARD_ID;
-        clinicContainer = $(modalTarget).find('.clinic-info-container');
+        clinicContainer = $(modalTarget).find('.'+CLINIC_INFO_CONTAINER_CLASS);
         showModal(modalTarget);
         placesClinicsApiCall(clinicContainer);
         break;
       default:
         // Unknown
         modalTarget = '#'+UNKNOWN_HAZARD_ID;
-        clinicContainer = $(modalTarget).find('.clinic-info-container');
+        clinicContainer = $(modalTarget).find('.'+CLINIC_INFO_CONTAINER_CLASS);
         showModal(modalTarget);
         placesClinicsApiCall(clinicContainer);
         break;
@@ -186,36 +177,9 @@ function showModal(target) {
     $(target).addClass("is-active");
 }
 
-function showNoHazardHandler(event) {
-  let target = '#'+NO_HAZARD_ID;
-  showModal(target);
-}
-
-function showMaybeHazardHandler(event) {
-  let target = '#'+MAYBE_HAZARD_ID;
-  let clinicContainer = $(target).find('.clinic-info-container');
-  showModal(target);
-  clinicsApiCall(clinicContainer);
-}
-
-function showSevereHazardHandler(event) {
-  let target = '#'+SEVERE_HAZARD_ID;
-  let clinicContainer = $(target).find('.clinic-info-container');
-  showModal(target);
-  clinicsApiCall(clinicContainer);
-}
-
-function showUnknownHazardHandler(event) {
-  let target = '#'+UNKNOWN_HAZARD_ID;
-  let clinicContainer = $(target).find('.clinic-info-container');
-  showModal(target);
-  clinicsApiCall(clinicContainer);
-}
-
 // Sets buttons display to a default of hide
 $("#buttonsContainer").children().hide();
 
-debugInit();
 init();
 
 
