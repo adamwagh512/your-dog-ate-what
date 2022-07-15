@@ -116,7 +116,8 @@ function placesClinicsApiCall(clinincContainerElement) {
 
     let request = {
         query: 'animal hospital',
-        type: 'veterinary_care'
+        type: 'veterinary_care',
+        openNow: true
     };
     service.textSearch(request, (results, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -155,10 +156,16 @@ function placesDetailsApiCall(clinicContainerElement, clinic) {
 }
 
 function placesBuildClinicInfoSection(clinicContainerElement, clinics) {
-    for (var i = 0; i < CLINIC_NUMBER; i++) {
-        let clinic = clinics[i];
-        console.debug(clinic);
-        placesDetailsApiCall(clinicContainerElement, clinic)
+    let numberOfClinics = Math.min(CLINIC_NUMBER, clinics.length);
+    if (numberOfClinics == 0) {
+        clinicContainerElement.children('h3').text('No nearby open clinics')
+    } else {
+        clinicContainerElement.children('h3').text('Closest Veterniary Clinics Open Now')
+        for (var i = 0; i < numberOfClinics; i++) {
+            let clinic = clinics[i];
+            console.debug(clinic);
+            placesDetailsApiCall(clinicContainerElement, clinic)
+        }
     }
 }
 
