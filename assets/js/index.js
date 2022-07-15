@@ -64,8 +64,6 @@ function loadRecentSearches() {
   let filteredSearches = storedSearches.filter(search => search.trim().length)
   recentSearches = filteredSearches;
 
-  // Console log for testing purposes
-  console.log(filteredSearches);
   // For each item in the array,
   for (var i = 0; i < filteredSearches.length; i++) {
     // A new button is revealed
@@ -93,8 +91,6 @@ function searchFunction(userInput, recentSearch = false) {
   }
 
   if (!recentSearch) {
-    console.log(userInput);
-
     // pushes eaten value into an empty array
     recentSearches.unshift(userInput);
 
@@ -111,8 +107,6 @@ function searchFunction(userInput, recentSearch = false) {
   // Switch statement to present each different modal
   determineInputToxicity(userInput)
     .then((toxicity) => {
-      console.log('main then')
-
       let modalTarget;
       let clinicContainer;
       switch (toxicity) {

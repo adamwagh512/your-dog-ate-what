@@ -11,7 +11,6 @@ function determineInputToxicity(eatenInput) {
     // Search through the poison list for the specific thing eaten
     // No need for a network call if we already have the info
     let poisonListMatch = determineFoodToxicity({ingredients: eatenInput});
-    console.debug(poisonListMatch)
     if (poisonListMatch != 0) {
         return Promise.resolve(poisonListMatch);
     }
@@ -39,7 +38,6 @@ function determineInputToxicity(eatenInput) {
 // Return toxicity level 0, 1, 2, 3
 // 0 = Unknown
 function determineFoodToxicity(foodItem) {
-    console.log(foodItem)
     // Parse the ingredients list string into ingredients
     let ingredients = parseIngredientsString(foodItem.ingredients);
 
@@ -48,10 +46,8 @@ function determineFoodToxicity(foodItem) {
     let mostToxic = 0;
     for (var i = 0; i < ingredients.length; i++) {
         let ingredient = ingredients[i].toLowerCase();
-        console.debug('Ingredient: ' + ingredient)
         // Check if in poisons
         if (POISON_SET[ingredient]) {
-            console.debug('known poison')
             mostToxic = Math.max(mostToxic, POISON_SET[ingredient]);
         }
     }

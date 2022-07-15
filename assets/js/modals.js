@@ -65,7 +65,6 @@ function placesClinicsApiCall(clinincContainerElement) {
 
     service.textSearch(request, (results, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-            console.log(results);
             placesBuildClinicInfoSection(clinincContainerElement, results);
         }
     });
@@ -86,7 +85,6 @@ function placesDetailsApiCall(clinicContainerElement, clinic) {
     };
     service.getDetails(request, (results, status) => {
         if (status === google.maps.places.PlacesServiceStatus.OK) {
-            console.log(results);
             let phoneNumber = results.formatted_phone_number;
             let clinicObject = {
                 address: clinic.formatted_address,
@@ -96,7 +94,6 @@ function placesDetailsApiCall(clinicContainerElement, clinic) {
             let clinicBoxElement = createClinicBoxElement().addClass('box has-text-centered');
             // Get i-th clinic box element and pass it into here
             populateClinicBoxElement(clinicBoxElement, clinicObject);
-            console.debug(clinicBoxElement);
 
             clinicContainerElement.append(clinicBoxElement);
         }
@@ -115,7 +112,6 @@ function placesBuildClinicInfoSection(clinicContainerElement, clinics) {
         let infoContainerElement = clinicContainerElement.children('div').html('');
         for (var i = 0; i < numberOfClinics; i++) {
             let clinic = clinics[i];
-            console.debug(clinic);
             placesDetailsApiCall(infoContainerElement, clinic)
         }
     }
