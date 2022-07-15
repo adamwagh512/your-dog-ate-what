@@ -1,5 +1,5 @@
 import { determineInputToxicity } from './food_api.js'
-import { clinicsApiCall, initModals } from './modals.js'
+import { clinicsApiCall, placesClinicsApiCall, initModals } from './modals.js'
 import { populateAboutUsSection } from './aboutUs.js'
 
 //Creates an empty JavaScript Array
@@ -117,7 +117,7 @@ function searchFunction(userInput, recentSearch = false) {
         modalTarget = '#'+MAYBE_HAZARD_ID;
         clinicContainer = $(modalTarget).find('.'+CLINIC_INFO_CONTAINER_CLASS);
         showModal(modalTarget);
-        clinicsApiCall(clinicContainer);
+        placesClinicsApiCall(clinicContainer);
         break;
       case 4:
       case 5:
@@ -125,14 +125,14 @@ function searchFunction(userInput, recentSearch = false) {
         modalTarget = '#'+SEVERE_HAZARD_ID;
         clinicContainer = $(modalTarget).find('.'+CLINIC_INFO_CONTAINER_CLASS);
         showModal(modalTarget);
-        clinicsApiCall(clinicContainer);
+        placesClinicsApiCall(clinicContainer);
         break;
       default:
         // Unknown
         modalTarget = '#'+UNKNOWN_HAZARD_ID;
         clinicContainer = $(modalTarget).find('.'+CLINIC_INFO_CONTAINER_CLASS);
         showModal(modalTarget);
-        clinicsApiCall(clinicContainer);
+        placesClinicsApiCall(clinicContainer);
         break;
     }
     
