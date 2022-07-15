@@ -1,3 +1,4 @@
+/* Our color palate */
 :root {
     --a1: #2C5959;
     --a2: #cf959d;
@@ -6,15 +7,15 @@
     --a5: #E5D0CC;  
     --a6: #EDEDED;
 }
-
+/* primary text color */
 *{
     color: black;
 }
-
+/* background color for our site */
 body {
     background-color: var(--a4) ;
 }
-
+/* styling for the head class */
 #head {
     font-family: 'Oswald', sans-serif;
     font-weight: bolder;
@@ -26,19 +27,19 @@ body {
     margin-bottom: 20px;
     font-family: 'Bangers', cursive;
 }
-
+/* Styling for our hero element */
 #hero {
     margin-bottom: 20px;
 
 }
-
+/* Styling for all H1 elements */
 h1 {
     
     font-family: 'Nanum Pen Script', cursive;;
     text-align: center;
     background-color: var(--a5);
 }
-
+/* styling for head */
 head {
     font-family: 'Oswald', sans-serif;
     text-align: center;
@@ -47,22 +48,101 @@ head {
     margin-top: 20px;
 }
 
+/* Styling for text area */
 .textarea {
     border-radius: 9999px;
     resize: none;
     margin-top: 20px ;
 }
-
+/* styling for id top-container */
 #top-container {
     height: 100vh;
 }
-
+/* Styling for recent-searches label */
 #recent-searches-label {
     font-family: 'Oswald', sans-serif;
     margin: .8rem;
 }
 
-.panel {
+/* Styling for our brand logo */
+.brand-logo {
+    font-family: 'Bangers', cursive;
+    background-color: #ededed;
+    color: #363636;
+    font-size: 2.1rem;
+}
+/* Styling for nav bar */
+.my-navbar {
+    background-color: var(--a1);
+}
+/* Styling for nav bar buttons */
+.my-navbar-button {
+    color: var(--a6);
+    font-size: 1.5rem;
+    font-family: 'Bangers', cursive;
+    transition: all 0.2s ease-in-out;
+}
+/* Styling for when nav bar is hovered over */
+.my-navbar-button:hover {
+    cursor: pointer;
+    background-color: var(--a6);
+    color: var(--a1);
+    transition: all 0.2s ease-in-out;
+}
+/* Styling for mobile nav-bar */
+.my-navbar-burger {
+    height: auto;
+}
+/* styling for navbar menue */
+.navbar-menu {
+    background-color: var(--a1);
+}
+/* styling for navbar menu paragraphs and anchortags */
+.navbar-menu p, a {
+    text-align: center;
+}
+/* Styling for the big picture of dog on landing page */
+#dog {
+    max-width: 50vw;
+}
+/* Styling for the page footer */
+#page-footer {
+    margin-bottom: 0 !important;
+}
+/* Styling for text-input box */
+.text-input {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+/* controls styling for submit button */
+.button {
+    background-color: var(--a3);
+    font-family: 'Oswald', sans-serif;
+}
+/* Controls styling for recent searches buttons */
+.rs {
+    background-color: var(--a2);
+} 
+/* Controls the text beside our logo image */
+#logo {
+    width: 30px;
+    font-family: 'Bangers', cursive;  
+}
+/* Styling for about us modal */
+.about-us {
+    text-align: center;
+}
+
+/* styling for definite hazard modal */
+.definite-hazard-modal{
+    background-color: #CA2E55;
+}
+/* Styling for modal images */
+.image img { height: 100%; object-fit: cover; }
+
+/* Code we dont think we need anymore, gonna test first */
+/* styling for panel at top of page */
+/* .panel {
     background-color: var(--a1);
     font-family: 'Bangers', cursive;
     
@@ -71,78 +151,4 @@ head {
 .panel-block {
     color: white;
     font-family: 'Bangers', cursive;
-}
-
-.brand-logo {
-    font-family: 'Bangers', cursive;
-    background-color: #ededed;
-    color: #363636;
-    font-size: 2.1rem;
-}
-
-.my-navbar {
-    background-color: var(--a1);
-}
-
-.my-navbar-button {
-    color: var(--a6);
-    font-size: 1.5rem;
-    font-family: 'Bangers', cursive;
-    transition: all 0.2s ease-in-out;
-}
-
-.my-navbar-button:hover {
-    cursor: pointer;
-    background-color: var(--a6);
-    color: var(--a1);
-    transition: all 0.2s ease-in-out;
-}
-
-.my-navbar-burger {
-    height: auto;
-}
-
-.navbar-menu {
-    background-color: var(--a1);
-}
-
-.navbar-menu p, a {
-    text-align: center;
-}
-
-#dog {
-    max-width: 50vw;
-}
-
-#page-footer {
-    margin-bottom: 0 !important;
-}
-
-.text-input {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.button {
-    background-color: var(--a3);
-    font-family: 'Oswald', sans-serif;
-}
-
-.rs {
-    background-color: var(--a2);
-} 
-
-#logo {
-    width: 30px;
-    font-family: 'Bangers', cursive;  
-}
-
-.about-us {
-    text-align: center;
-}
-
-.definite-hazard-modal {
-    background-color: #CA2E55;
-}
-
-.image img { height: 100%; object-fit: cover; }
+} */

@@ -26,6 +26,7 @@
 </head>
 
 <body>
+  <!-- Our navbar -->
   <nav class="navbar my-navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand brand-logo">
       <p class="navbar-item">
@@ -39,9 +40,10 @@
         <span aria-hidden="true"></span>
       </a>
     </div>
-  
+  <!-- Nav bar buttons -->
     <div id="navbar-menu" class="navbar-menu">
       <div class="navbar-end">
+        <!-- formatting for nav bar buttons -->
         <p class="navbar-item my-navbar-button" id="about-us-button" data-target="#about-us-modal">
           About Us
         </p>
@@ -70,6 +72,7 @@
           Your Dog Ate What?!
         </div>
       </div>
+      <!-- This section controls the big dog image on the page -->
       <div class="hero">
         <div class="container">
           <figure class="image is-256x256">
@@ -77,12 +80,13 @@
           </figure>
         </div>
       </div>
-
+<!-- code below deals with our text box -->
       <div class="field has-addons text-input">
         <div class="control is-expanded">
-          <!-- Giving input the ID of eaten -->
+          <!-- This section controls our text box, it also helps with searches by giving input the ID of eaten -->
           <input type="text" maxlength="25" id="eaten" class="input is-large" placeholder="What did your dog eat?"></textarea>
         </div>
+        <!-- The code below controls the submit button on the landing page -->
         <div class="control">
           <button id="submitBtn" class="button is-large">Submit</button>
         </div>
@@ -94,10 +98,12 @@
 
   </div>
 
-    <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile); breaks for styling  -->
+    <!-- This section of code deals with the buttons on the right side of the screen (bottom on mobile)  -->
   <div id="recent-searches-area">
+    <!-- formating for recent searches area -->
     <h2 id="recent-searches-label" class="has-text-centered is-size-2">Recent Searches</h2>
     <div id="buttonsContainer" class="columns is-centered mx-1">
+      <!-- code below controls the behavior for the recent searches (rs) buttons -->
       <div class="column">
         <button id="rs1" class="button is-large is-fullwidth rs"></button>
       </div>
@@ -114,12 +120,14 @@
   </div>
   
 </div>
-
+<!-- The section below deals with our about us modal -->
   <div id="about-us-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
+        <!-- controls modal title -->
         <p class="modal-card-title">About Us</p>
+        <!-- close button -->
         <button class="delete my-modal-close" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
@@ -130,6 +138,7 @@
         </div>
         <div class="columns">
           <div class="column about-us">
+            <!-- controls text at the top of the modal -->
             <h3 class="title is-3">Who we are </h3>
             <p>
               We are a group of dog loving coding students who came together with one simple goal in mind; Make the
@@ -144,32 +153,33 @@
             </p>
           </div>
         </div>
+        <!-- Controls formatting of card section below -->
         <div id="team-container" class="columns is-multiline">
           <div class="column is-half">
             <div class="card">
               <div class="card-image">
                 <figure class="image is-4by3">
+                  <!-- image of team member Kurt -->
                   <img src="./assets/images/kurt1.jpg" alt="Picture of Kurt">
                 </figure>
               </div>
               <div class="card-content">
                 <div class="media">
                   <div class="media-left">
+                    <!-- smaller image of Kurt -->
                     <figure class="image is-48x48">
                       <img src="./assets/images/kurt1.jpg" alt="Picture of Kurt">
                     </figure>
                   </div>
+                  <!-- Text area of card -->
                   <div class="media-content">
                     <p class="title is-4">Kurt Bixby</p>
                     <p class="subtitle is-6">Github: kurtbixby</p>
                   </div>
                 </div>
-                <!-- not sure if we want descriptions, so commented them out for now -->
+               
                 <div class="content">
-                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                          <a href="#">#css</a> <a href="#">#responsive</a>
-                          <br> -->
+                  
                 </div>
               </div>
             </div>
@@ -195,10 +205,7 @@
                 </div>
 
                 <div class="content">
-                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                          <a href="#">#css</a> <a href="#">#responsive</a>
-                          <br> -->
+                  
                 </div>
               </div>
             </div>
@@ -224,10 +231,7 @@
                 </div>
 
                 <div class="content">
-                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                          <a href="#">#css</a> <a href="#">#responsive</a>
-                          <br> -->
+                
                 </div>
               </div>
             </div>
@@ -253,10 +257,7 @@
                 </div>
 
                 <div class="content">
-                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                          <a href="#">#css</a> <a href="#">#responsive</a>
-                          <br> -->
+              
 
                 </div>
               </div>
@@ -283,10 +284,7 @@
                 </div>
 
                 <div class="content">
-                  <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                          Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-                          <a href="#">#css</a> <a href="#">#responsive</a>
-                          <br> -->
+                  
                 </div>
               </div>
             </div>
@@ -295,21 +293,25 @@
       </section>
     </div>
   </div>
-
+<!-- The following section controls the section of our unknown hazard modal -->
   <div id="unknown-hazard-modal" class="modal">
+   <!-- some styling for our modal -->
     <div class="modal-background"></div>
     <div class="modal-content has-background-white p-3">
       <div class="content is-larger ">
         <div class="has-text-centered has-background-info">
+          <!-- h1 at top of modal -->
           <h1 class="has-text-black">Ruh-oh!</h1>
         </div>
-
+        <!-- Text of modal -->
         <h2 class="has-text-centered has-text-weight-semibold	">We don't know whether your substance is toxic!
           Feel free to reach out at <a href="mailto:yourdogatewhat@gmail.com">yourdogatewhat@gmail.com</a>, so we can add it.</h2>
-        <figure class="image is-3by2">
+        <!-- Image for modal -->
+          <figure class="image is-3by2">
           <img class="is-rounded"
             src="https://media.istockphoto.com/photos/weimaraner-with-head-cocked-picture-id509119713?k=20&m=509119713&s=612x612&w=0&h=gsZImHt0_RED1LL2W05Klj1Rz8yuavU9SFNLRtM95c4=">
         </figure>
+        <!-- more styling -->
         <div class="clinic-info-container has-text-centered">
           <h3></h3>
           <!-- Nearest  Animal  Hospital will display here -->
@@ -318,7 +320,7 @@
       </div>
     </div>
   </div>
-
+<!-- The following section controls the section of our no hazard modal, see our unknown hazard for comments  -->
   <div id="no-hazard-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-content has-background-white p-3">
@@ -336,7 +338,7 @@
       </div>
     </div>
   </div>
-
+<!-- The following section controls the section of our maybe hazard modal, see our unknown hazard for comments  -->
   <div id="maybe-hazard-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-content has-background-white p-3">
@@ -365,7 +367,7 @@
       </div>
     </div>
   </div>
-
+<!-- The following section controls the section of our definate hazard modal, see our unknown hazard for comments  -->
   <div id="definite-hazard-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-content has-background-white p-3">
@@ -387,32 +389,40 @@
       </div>
     </div>
   </div>
-
+<!-- This section deals with the poison index modal -->
   <div id="poison-index-modal" class="modal">
+   <!-- styling tag, see CSS -->
     <div class="modal-background"></div>
     <div class="modal-card">
+      <!-- header -->
       <header class="modal-card-head">
         <p class="modal-card-title">Poison Index</p>
+        <!-- button to close the modal -->
         <button class="delete my-modal-close" aria-label="close"></button>
       </header>
+      <!-- controls body of poison index modal -->
       <section class="modal-card-body">
         <div id="poison-index-holder" class="wrapper"></div>
       </section>
     </div>
   </div>
-
+<!-- This section of code controls our FAQs modal -->
   <div id="faqs-modal" class="modal">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
         <p class="modal-card-title">Frequently Asked Questions</p>
+        <!-- controls close button of modal -->
         <button class="delete my-modal-close" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
         <div class="box has-text-centered">
           <div class="container">
+            <!-- controls size and text alignment of div class -->
             <div class="is-size-2 has-text-centered">
+              <!-- Controls size and color of text box -->
               <div class="message box is-primary is-size-6">
+                <!-- Title of section -->
                 <h3 class="title is-3">What does this site do?</h3>
                 <div id="marian6">
                   <p>
@@ -420,14 +430,14 @@
                     dog ate was toxic and whether they need to see a vet.
                   </p>
                 </div>
-
+                <!-- controls function of response button -->
                 <button onclick="myFunction6()">Response</button>
                 <script>
                   document.getElementById("marian6").style.display = "none";
 
                   function myFunction6() {
                     var x = document.getElementById("marian6");
-
+                    // if the response is not displayed, it will display when button is clicked, else clicking the button will hide the response
                     if (x.style.display === "none") {
                       x.style.display = "block";
                     } else {
@@ -572,7 +582,7 @@
       </section>
     </div>
   </div>
-
+<!-- This section of code controls our footer -->
   <div id="page-footer" class="columns">
     <div class="column is has-text-centered">
       <span>Check us out on </span><a href="https://github.com/adamwagh512/your-dog-ate-what">Github</a>
@@ -586,7 +596,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeAPHf2DiPsUeBJ0-2c6UvdH78gma_TJU&libraries=places&callback=initModals">
   </script>
-  <!-- Script tag for my JS -->
+  <!-- Script tags for our JS -->
   <script type="module" src="./assets/js/index.js"></script>
   <script type="module" src="./assets/js/poisonIndex.js"></script>
   <script type="module" src="./assets/js/food_api.js"></script>
